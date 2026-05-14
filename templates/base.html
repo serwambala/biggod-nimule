@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big God Ministries - Nimule</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            Big God Ministries – Nimule
+        </div>
+        <ul class="nav-links">
+    <li>
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">
+            Home
+        </a>
+    </li>
+    <li class="dropdown">
+
+    <a href="{% url 'about' %}"
+       class="{% if request.resolver_match.url_name in 'about mission vision story' %}active{% endif %}">
+        About
+    </a>
+
+    <ul class="dropdown-menu">
+
+        <li>
+            <a href="{% url 'about' %}"
+               class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                Overview
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'mission' %}"
+               class="{% if request.resolver_match.url_name == 'mission' %}active{% endif %}">
+                Mission
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'vision' %}"
+               class="{% if request.resolver_match.url_name == 'vision' %}active{% endif %}">
+                Vision
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'story' %}"
+               class="{% if request.resolver_match.url_name == 'story' %}active{% endif %}">
+                Our Story
+            </a>
+        </li>
+
+    </ul>
+
+</li>
+
+    </div>
+</li>
+
+    <li>
+        <a href="/church/" class="{% if request.path == '/church/' %}active{% endif %}">
+            Church
+        </a>
+    </li>
+
+    <li>
+        <a href="/children/" class="{% if request.path == '/children/' %}active{% endif %}">
+            Children
+        </a>
+    </li>
+
+    <li>
+    <a href="{% url 'gallery' %}"
+       class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+        Gallery
+    </a>
+</li>
+
+    <li>
+        <a href="/get-involved/" class="{% if request.path == '/get-involved/' %}active{% endif %}">
+            Get Involved
+        </a>
+    </li>
+
+    <li>
+    <a href="{% url 'contact' %}"
+       class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+        Contact
+    </a>
+</li>
+</ul>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Big God Ministries – Nimule</h3>
+            <p>
+                Bringing hope, faith, and restoration to children and communities
+                in Nimule, South Sudan.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <p><a href="/">Home</a></p>
+            <p><a href="/church/">Church</a></p>
+            <p><a href="/children/">Children</a></p>
+            <p><a href="/get-involved/">Get Involved</a></p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Location</h3>
+
+            <p>Nimule, South Sudan</p>
+            <p>Big God International Revival Ministries</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Big God International Revival Ministries – Nimule</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
