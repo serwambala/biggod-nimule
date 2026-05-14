@@ -484,3 +484,102 @@ body {
 .impact-btn:hover {
     background: #a67c3d;
 }
+/* HOPE SECTION */
+
+.hope-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)),
+                url("../images/nimule_kids.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hope-section h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.scripture {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #f0d9b5;
+}
+
+.hope-section p {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 18px;
+}
+
+.hope-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hope-buttons .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #c59d5f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.hope-buttons .btn:hover {
+    background: #a67c3d;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent !important;
+    border: 2px solid #c59d5f;
+}
+
+.btn-outline:hover {
+    background: #c59d5f !important;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .hope-section {
+        padding: 80px 20px;
+    }
+
+    .hope-section h2 {
+        font-size: 32px;
+    }
+
+    .scripture {
+        font-size: 18px;
+    }
+
+    .hope-section p {
+        font-size: 16px;
+    }
+
+    .hope-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hope-buttons .btn {
+        width: 220px;
+    }
+}
