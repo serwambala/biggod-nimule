@@ -445,3 +445,42 @@ body {
     font-size: 40px;
     cursor: pointer;
 }
+/* IMPACT SECTION */
+
+.impact-section {
+    background: #f5f5f5;
+    padding: 80px 20px;
+}
+
+.impact-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.impact-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.impact-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.impact-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #c59d5f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.impact-btn:hover {
+    background: #a67c3d;
+}
