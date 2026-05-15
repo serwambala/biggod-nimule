@@ -160,9 +160,15 @@ button:hover {
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.nav-links.active {
+    display: flex;
+}
 
     .hero {
         padding: 80px 20px;
@@ -281,28 +287,36 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
+
+    background: #1f3b4d;
     min-width: 200px;
     list-style: none;
     padding: 10px 0;
     margin: 0;
     border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-top: 2px solid #4caf50;
+
+    /* animation core */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
+    transform: translateY(20px) scale(0.98);
 
-    transition: all 0.25s ease;
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.35s ease;
 
     z-index: 1000;
 }
+
 
 /* SHOW DROPDOWN */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 /* DROPDOWN LINKS */
@@ -313,14 +327,17 @@ body {
 .dropdown-menu a {
     display: block;
     padding: 12px 18px;
-    color: #222;
+    color: #f5f5f5;
+    font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 /* HOVER EFFECT */
 .dropdown-menu a:hover {
-    background: #f3f3f3;
+    background: rgba(76, 175, 80, 0.15); /* soft green glow */
+    color: #4caf50;
+    padding-left: 22px; /* subtle slide effect */
 }
 
 /* ACTIVE CHILD LINK */
@@ -445,141 +462,133 @@ body {
     font-size: 40px;
     cursor: pointer;
 }
-/* IMPACT SECTION */
 
-.impact-section {
-    background: #f5f5f5;
-    padding: 80px 20px;
-}
+/* HAMBURGER ICON */
 
-.impact-content {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-}
-
-.impact-content h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-.impact-content p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.impact-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #c59d5f;
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
 }
 
-.impact-btn:hover {
-    background: #a67c3d;
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #1f3b4d;
+        padding: 20px 0;
+    }
 }
-/* HOPE SECTION */
+
+/* HOPE / SCRIPTURE SECTION */
 
 .hope-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.75),
-                rgba(0, 0, 0, 0.75)),
-                url("../images/nimule_kids.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    padding: 100px 20px;
+    background: #ffffff;
+    padding: 70px 20px;
     text-align: center;
-    color: white;
+    max-width: 900px;
+    margin: 60px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
+/* Heading */
 .hope-section h2 {
-    font-size: 42px;
-    margin-bottom: 25px;
-    font-weight: bold;
+    font-size: 28px;
+    color: #1f3b4d;
+    margin-bottom: 20px;
 }
 
-.scripture {
-    font-size: 22px;
+/* Scripture styling */
+.hope-section .scripture {
     font-style: italic;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    color: #f0d9b5;
-}
-
-.hope-section p {
-    max-width: 850px;
-    margin: auto;
-    line-height: 1.9;
     font-size: 18px;
+    color: #2e7d32;
+    background: #f3f8f4;
+    padding: 20px;
+    border-left: 5px solid #4caf50;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 700px;
 }
 
+/* Paragraph text */
+.hope-section p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* BUTTON CONTAINER */
 .hope-buttons {
-    margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 
-.hope-buttons .btn {
-    display: inline-block;
-    padding: 14px 32px;
-    background: #c59d5f;
-    color: white;
+/* BASE BUTTON */
+.hope-section .btn {
+    padding: 12px 22px;
     text-decoration: none;
     border-radius: 6px;
-    transition: 0.3s ease;
-    font-weight: 600;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.hope-buttons .btn:hover {
-    background: #a67c3d;
-    transform: translateY(-3px);
+/* PRIMARY BUTTON */
+.hope-section .btn {
+    background: #2e7d32;
+    color: white;
 }
 
-.btn-outline {
-    background: transparent !important;
-    border: 2px solid #c59d5f;
+.hope-section .btn:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
 }
 
-.btn-outline:hover {
-    background: #c59d5f !important;
+/* OUTLINE BUTTON */
+.hope-section .btn-outline {
+    background: transparent;
+    border: 2px solid #2e7d32;
+    color: #2e7d32;
 }
 
-/* MOBILE RESPONSIVENESS */
-
-@media (max-width: 768px) {
-
-    .hope-section {
-        padding: 80px 20px;
-    }
-
-    .hope-section h2 {
-        font-size: 32px;
-    }
-
-    .scripture {
-        font-size: 18px;
-    }
-
-    .hope-section p {
-        font-size: 16px;
-    }
-
-    .hope-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hope-buttons .btn {
-        width: 220px;
-    }
+.hope-section .btn-outline:hover {
+    background: #2e7d32;
+    color: white;
+}
+.special-hero-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 6px;
+    display: inline-block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.special-hero-button:hover {
+    background-color: #1b5e20;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+.hero-buttons {
+    position: relative;
+    top: 100px;
 }

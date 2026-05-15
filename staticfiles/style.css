@@ -446,3 +446,30 @@ body {
     cursor: pointer;
 }
 
+/* HAMBURGER ICON */
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #1f3b4d;
+        padding: 20px 0;
+    }
+}
