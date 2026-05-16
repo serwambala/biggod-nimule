@@ -43,33 +43,39 @@
             <ul class="dropdown-menu">
 
                 <li>
-                    <a href="{% url 'about' %}"
-                       class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
-                        Overview
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'mission' %}"
-                       class="{% if request.resolver_match.url_name == 'mission' %}active{% endif %}">
-                        Mission
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'vision' %}"
-                       class="{% if request.resolver_match.url_name == 'vision' %}active{% endif %}">
-                        Vision
-                    </a>
-                </li>
-
-                <li>
                     <a href="{% url 'story' %}"
                        class="{% if request.resolver_match.url_name == 'story' %}active{% endif %}">
                         Our Story
                     </a>
                 </li>
 
+                <li>
+                    <a href="{% url 'core-values' %}"
+                       class="{% if request.resolver_match.url_name == 'core-values' %}active{% endif %}">
+                        Core Values
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'vision' %}"
+                       class="{% if request.resolver_match.url_name == 'vision' %}active{% endif %}">
+                        Vision & Mission
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'statement-of-faith' %}"
+                       class="{% if request.resolver_match.url_name == 'vision' %}active{% endif %}">
+                        Statement Of Faith
+                    </a>
+                </li>
+
+                 <li>
+                    <a href="{% url 'leadership' %}"
+                       class="{% if request.resolver_match.url_name == 'leadership' %}active{% endif %}">
+                        Leadership
+                    </a>
+                </li>
             </ul>
 
         </li>

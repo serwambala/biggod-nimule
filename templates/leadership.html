@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="leadership-hero"
+style="background-image: url('{% static "images/leadership-hero.jpg" %}');">
+
+    <div class="leadership-overlay"></div>
+
+    <div class="leadership-content">
+
+        <h1>Our Leadership</h1>
+
+        <p>
+            The people called to serve, guide, and shepherd this ministry
+            with faith, integrity, and humility.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- INTRO -->
+<section class="leadership-intro">
+
+    <div class="leadership-intro-container">
+
+        <h2>Servant Leadership</h2>
+
+        <p>
+            At Big God International Revival Ministries, leadership is not about status
+            but service. Our leaders are committed to prayer, teaching the Word of God,
+            and caring for the spiritual and physical needs of the community.
+        </p>
+
+        <p>
+            We believe in accountability, humility, and leading by example as Christ taught.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- LEADERS GRID -->
+<section class="leadership-section">
+
+    <h2>Ministry Leaders</h2>
+
+    <div class="leadership-grid">
+
+        <div class="leader-card">
+            <img src="{% static 'images/pastor.jpg' %}" alt="Senior Pastor">
+
+            <h3>Senior Pastor</h3>
+            <p class="leader-name">Pastor Name Here</p>
+
+            <p>
+                Oversees spiritual direction, preaching, and overall vision of the ministry.
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="{% static 'images/worship-leader.jpg' %}" alt="Worship Leader">
+
+            <h3>Worship Leader</h3>
+            <p class="leader-name">Leader Name</p>
+
+            <p>
+                Leads praise and worship, guiding the congregation into the presence of God.
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="{% static 'images/children-leader.jpg' %}" alt="Children Leader">
+
+            <h3>Children’s Ministry Lead</h3>
+            <p class="leader-name">Leader Name</p>
+
+            <p>
+                Responsible for children programs, mentorship, and spiritual nurturing.
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="{% static 'images/outreach-leader.jpg' %}" alt="Outreach Leader">
+
+            <h3>Outreach Coordinator</h3>
+            <p class="leader-name">Leader Name</p>
+
+            <p>
+                Oversees humanitarian support, community outreach, and development programs.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LEADERSHIP PRINCIPLES -->
+<section class="leadership-values">
+
+    <div class="leadership-values-box">
+
+        <h2>How We Lead</h2>
+
+        <ul>
+            <li>✔ Christ-centered leadership</li>
+            <li>✔ Servant heart attitude</li>
+            <li>✔ Accountability and transparency</li>
+            <li>✔ Commitment to Scripture</li>
+            <li>✔ Love for people and community</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- SCRIPTURE -->
+<section class="leadership-scripture">
+
+    <div class="leadership-scripture-box">
+
+        <h2>Leadership Foundation</h2>
+
+        <p class="leadership-scripture-text">
+            “Whoever wants to become great among you must be your servant.”
+            — Matthew 20:26
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="leadership-cta">
+
+    <h2>Connect With Us</h2>
+
+    <p>
+        We believe leadership is strongest when connected to community.
+        Feel free to reach out, visit, or partner with us.
+    </p>
+
+    <div class="leadership-buttons">
+
+        <a href="/contact/" class="leadership-btn">
+            Contact Us
+        </a>
+
+        <a href="/get-involved/" class="leadership-btn leadership-btn-outline">
+            Get Involved
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

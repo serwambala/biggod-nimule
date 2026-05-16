@@ -22,11 +22,17 @@ def story(request):
 def vision(request):
     return render(request, 'vision.html')
 
-def mission(request):
-    return render(request, 'mission.html')
+def core_values(request):
+    return render(request, 'core-values.html')
 
 def gallery(request):
     return render(request, 'gallery.html')
+
+def leadership(request):
+    return render(request, 'leadership.html')
+
+def statement_of_faith(request):
+    return render(request, 'statement-of-faith.html')
 
 
 from django.http import HttpResponse
