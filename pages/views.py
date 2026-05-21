@@ -55,3 +55,57 @@ def contact(request):
         return HttpResponse("Message received. Thank you for contacting us.")
 
     return render(request, "contact.html")
+
+from django.shortcuts import render, redirect
+
+from .models import (
+    Event,
+    Testimony,
+    Sermon
+)
+
+
+def church(request):
+
+    # HANDLE TESTIMONY SUBMISSION
+    if request.method == 'POST':
+
+        name = request.POST.get('name')
+
+        message = request.POST.get('message')
+
+        Testimony.objects.create(
+            name=name,
+            message=message
+        )
+
+        return redirect('church')
+
+
+    # GET MOST RECENT SERMON
+    latest_sermon = Sermon.objects.order_by('-created_at').first()
+
+    # GET EVENTS
+    events = Event.objects.all().order_by('date')
+
+
+    # GET APPROVED TESTIMONIES
+    testimonies = Testimony.objects.filter(
+        approved=True
+    ).order_by('-created_at')[:3]
+
+
+    context = {
+        'latest_sermon': latest_sermon,
+        'events': events,
+        'testimonies': testimonies,
+    }
+
+    return render(
+        request,
+        'church.html',
+        context
+    )
+def sermon_detail(request, id):
+    sermon = Sermon.objects.get(id=id)
+    return render(request, 'sermon_detail.html', {'sermon': sermon})
