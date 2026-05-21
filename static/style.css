@@ -1893,3 +1893,425 @@ body {
         font-size: 30px;
     }
 }
+
+/* =========================================
+   CHURCH PAGE
+========================================= */
+
+
+/* HERO SECTION */
+
+.church-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 850px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* BUTTONS */
+
+.hero-btn,
+.watch-btn,
+.submit-btn,
+.visit-btn {
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-btn:hover,
+.watch-btn:hover,
+.submit-btn:hover,
+.visit-btn:hover {
+    background: #1b5e20;
+    transform: translateY(-3px);
+}
+
+
+/* INTRO SECTION */
+
+.church-intro {
+    background: #f5f5f5;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.church-intro .container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.church-intro h2 {
+    color: #1f3b4d;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.church-intro p {
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+
+/* LATEST SERMON */
+
+.latest-sermon-section {
+    background: white;
+    padding: 90px 20px;
+}
+
+.sermon-wrapper {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.sermon-video video {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.sermon-details h3 {
+    color: #1f3b4d;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.sermon-details p {
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.sermon-date {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.no-sermon-message {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    background: #f3f8f4;
+    padding: 40px;
+    border-left: 5px solid #4caf50;
+    border-radius: 12px;
+}
+
+
+/* SERVICE TIMES */
+
+.service-times {
+    background: #f5f5f5;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.service-times h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-times p {
+    color: #555;
+}
+
+.service-grid {
+    max-width: 1200px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #444;
+}
+
+
+/* UPCOMING EVENTS */
+
+.upcoming-events {
+    background: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.upcoming-events h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.events-grid {
+    max-width: 1200px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.event-card {
+    background: #f8f8f8;
+    padding: 35px 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.event-date {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    color: #1f3b4d;
+    margin-bottom: 15px;
+}
+
+.event-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.event-location {
+    margin-top: 20px;
+}
+
+
+/* TESTIMONY FORM */
+
+.testimony-form-section {
+    background: #f5f5f5;
+    padding: 90px 20px;
+}
+
+.testimony-form-section .section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimony-form-section h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+}
+
+.testimony-form {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1f3b4d;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+
+/* APPROVED TESTIMONIES */
+
+.approved-testimonies {
+    background: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.approved-testimonies h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.testimony-grid {
+    max-width: 1200px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.testimony-card {
+    background: #f8f8f8;
+    padding: 35px 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.testimony-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.testimony-message {
+    color: #444;
+    line-height: 1.9;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimony-card h4 {
+    color: #2e7d32;
+}
+
+
+/* CTA */
+
+.worship-call-section {
+    background: #1f3b4d;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.worship-call-section h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.worship-call-section p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.worship-call-section .visit-btn {
+    margin-top: 35px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .church-intro h2,
+    .service-times h2,
+    .upcoming-events h2,
+    .testimony-form-section h2,
+    .approved-testimonies h2,
+    .worship-call-section h2,
+    .sermon-details h3 {
+        font-size: 30px;
+    }
+
+    .sermon-video video {
+        height: 260px;
+    }
+
+}
