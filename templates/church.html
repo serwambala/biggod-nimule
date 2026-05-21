@@ -53,6 +53,104 @@
 
 </section>
 
+<!-- APPROVED TESTIMONIES -->
+<section class="approved-testimonies">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Lives Transformed</h2>
+
+            <p>
+                Here are some testimonies shared
+                by members and visitors.
+            </p>
+
+        </div>
+
+
+        <div class="testimony-grid">
+
+            {% for testimony in testimonies %}
+
+            <div class="testimony-card">
+
+                <p class="testimony-message">
+                    “{{ testimony.message }}”
+                </p>
+
+                <h4>{{ testimony.name }}</h4>
+
+            </div>
+
+            {% empty %}
+
+            <p>No testimonies available yet.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONY SUBMISSION -->
+<section class="testimony-form-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Share Your Testimony</h2>
+
+            <p>
+                Tell us what God has done in your life.
+                Your testimony may encourage someone else.
+            </p>
+
+        </div>
+
+        <form method="POST" class="testimony-form">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+
+                <label>Your Name</label>
+
+                <input type="text"
+                       name="name"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Your Testimony</label>
+
+                <textarea name="message"
+                          rows="6"
+                          required></textarea>
+
+            </div>
+
+
+            <button type="submit"
+                    class="submit-btn">
+
+                Submit Testimony
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
 
 
 <!-- LATEST SERMON SECTION -->
@@ -207,105 +305,8 @@
 
 
 
-<!-- TESTIMONY SUBMISSION -->
-<section class="testimony-form-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>Share Your Testimony</h2>
-
-            <p>
-                Tell us what God has done in your life.
-                Your testimony may encourage someone else.
-            </p>
-
-        </div>
-
-        <form method="POST" class="testimony-form">
-
-            {% csrf_token %}
-
-            <div class="form-group">
-
-                <label>Your Name</label>
-
-                <input type="text"
-                       name="name"
-                       required>
-
-            </div>
 
 
-            <div class="form-group">
-
-                <label>Your Testimony</label>
-
-                <textarea name="message"
-                          rows="6"
-                          required></textarea>
-
-            </div>
-
-
-            <button type="submit"
-                    class="submit-btn">
-
-                Submit Testimony
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-
-<!-- APPROVED TESTIMONIES -->
-<section class="approved-testimonies">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>Lives Transformed</h2>
-
-            <p>
-                Here are some testimonies shared
-                by members and visitors.
-            </p>
-
-        </div>
-
-
-        <div class="testimony-grid">
-
-            {% for testimony in testimonies %}
-
-            <div class="testimony-card">
-
-                <p class="testimony-message">
-                    “{{ testimony.message }}”
-                </p>
-
-                <h4>{{ testimony.name }}</h4>
-
-            </div>
-
-            {% empty %}
-
-            <p>No testimonies available yet.</p>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
