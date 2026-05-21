@@ -14,4 +14,5 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('statement-of-faith/', views.statement_of_faith, name='statement-of-faith'),
     path('leadership/', views.leadership, name='leadership'),
+    path('sermon/<int:id>/', views.sermon_detail, name='sermon_detail'),
 ]

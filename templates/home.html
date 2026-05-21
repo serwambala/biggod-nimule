@@ -15,9 +15,15 @@
     
     <div class="hero-buttons">
 
-    <a href="/about/" class="special-hero-button">
-        Learn More
+    {% if latest_sermon and latest_sermon.id %}
+    <a href="{% url 'sermon_detail' latest_sermon.id %}" class="special-hero-button">
+        Watch Latest Sermon
     </a>
+{% else %}
+    <a href="#" class="special-hero-button">
+        No Sermons Available
+    </a>
+{% endif %}
 
     <a href="/get-involved/" class="special-hero-button">
         Support the Children

@@ -83,8 +83,7 @@ def church(request):
 
 
     # GET MOST RECENT SERMON
-    latest_sermon = Sermon.objects.first()
-
+    latest_sermon = Sermon.objects.order_by('-created_at').first()
 
     # GET EVENTS
     events = Event.objects.all().order_by('date')
@@ -107,3 +106,6 @@ def church(request):
         'church.html',
         context
     )
+def sermon_detail(request, id):
+    sermon = Sermon.objects.get(id=id)
+    return render(request, 'sermon_detail.html', {'sermon': sermon})
