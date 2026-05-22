@@ -15,15 +15,15 @@
     
     <div class="hero-buttons">
 
-    {% if latest_sermon and latest_sermon.id %}
-    <a href="{% url 'sermon_detail' latest_sermon.id %}" class="special-hero-button">
-        Watch Latest Sermon
-    </a>
-{% else %}
+    {% if latest_sermon %}
+        <a href="{{ latest_sermon.video_url }}" target="_blank"  class="special-hero-button">
+             Watch Latest Sermon
+        </a>
+    {% else %}
     <a href="#" class="special-hero-button">
         No Sermons Available
     </a>
-{% endif %}
+    {% endif %}
 
     <a href="/get-involved/" class="special-hero-button">
         Support the Children
