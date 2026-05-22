@@ -17,8 +17,9 @@ class Sermon(models.Model):
 
     description = models.TextField()
 
-    video = models.FileField(
-        upload_to='sermons/videos/'
+    video_url = models.URLField(
+        max_length=500,
+        help_text="Paste YouTube, TikTok, Facebook, or any sermon video link."
     )
 
     thumbnail = models.ImageField(
