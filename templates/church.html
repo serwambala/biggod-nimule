@@ -170,11 +170,9 @@
             <!-- VIDEO -->
             <div class="sermon-video">
 
-                <video controls poster="{{ latest_sermon.thumbnail.url }}">
-                    <source src="{{ latest_sermon.video.url }}" type="video/mp4">
-
-                    Your browser does not support the video tag.
-                </video>
+                <a href="{{ latest_sermon.video_url }}" target="_blank" class="watch-sermon-btn">
+    Watch Latest Sermon
+</a>
 
             </div>
 
