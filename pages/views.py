@@ -92,7 +92,7 @@ def church(request):
     # GET APPROVED TESTIMONIES
     testimonies = Testimony.objects.filter(
         approved=True
-    ).order_by('-created_at')[:3]
+    ).order_by('-created_at')[:5]
 
 
     context = {
