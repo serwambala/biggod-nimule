@@ -109,3 +109,15 @@ def church(request):
 def sermon_detail(request, id):
     sermon = Sermon.objects.get(id=id)
     return render(request, 'sermon_detail.html', {'sermon': sermon})
+
+from .models import Sermon
+
+
+def home(request):
+    latest_sermon = Sermon.objects.first()
+
+    context = {
+        'latest_sermon': latest_sermon
+    }
+
+    return render(request, 'pages/home.html', context)
