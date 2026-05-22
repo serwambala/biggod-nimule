@@ -9,6 +9,7 @@ class ContactMessage(models.Model):
     def __str__(self):
         return self.name
     
+
 from django.db import models
 
 
@@ -22,10 +23,6 @@ class Sermon(models.Model):
         help_text="Paste YouTube, TikTok, Facebook, or any sermon video link."
     )
 
-    thumbnail = models.ImageField(
-        upload_to='sermons/thumbnails/'
-    )
-
     created_at = models.DateTimeField(
         auto_now_add=True
     )
@@ -35,7 +32,6 @@ class Sermon(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 class Event(models.Model):
