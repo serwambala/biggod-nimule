@@ -120,4 +120,4 @@ def home(request):
         'latest_sermon': latest_sermon
     }
 
-    return render(request, 'pages/home.html', context)
+    return render(request, 'home.html', context)
