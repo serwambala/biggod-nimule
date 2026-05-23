@@ -25,9 +25,19 @@ body {
     z-index: 5000; /* IMPORTANT */
 }
 
+.logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
 .logo {
-    font-weight: bold;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
