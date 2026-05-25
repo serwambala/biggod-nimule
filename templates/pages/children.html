@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="children-hero" style="background-image: url('{% static "images/children-hero.jpg" %}');">
+
+    <div class="children-hero-overlay"></div>
+
+    <div class="children-hero-content">
+
+        <h1>Children’s Ministry</h1>
+
+        <p>
+            Bringing hope, education, care, spiritual guidance,
+            and a future to vulnerable children in Nimule,
+            South Sudan.
+        </p>
+
+        <div class="children-hero-buttons">
+
+            <a href="#sponsor" class="children-btn">
+                Sponsor A Child
+            </a>
+
+            <a href="{% url 'get_involved' %}" class="children-btn children-btn-outline">
+                Get Involved
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="children-intro">
+
+    <div class="children-intro-container">
+
+        <h2>Restoring Hope One Child At A Time</h2>
+
+        <p>
+            Many children in Nimule face poverty,
+            displacement, lack of education,
+            emotional trauma, hunger,
+            and spiritual neglect.
+        </p>
+
+        <p>
+            Through Big God International Revival Ministries,
+            we provide practical care and spiritual support
+            through feeding programs, school support,
+            discipleship, mentorship, prayer,
+            and community care.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="children-programs">
+
+    <h2>What We Do For Children</h2>
+
+    <div class="programs-grid">
+
+        {% for program in programs %}
+
+        <div class="program-card">
+
+            <img src="{{ program.image.url }}" alt="{{ program.title }}">
+
+            <div class="program-content">
+
+                <h3>{{ program.title }}</h3>
+
+                <p>{{ program.description }}</p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="sponsorship-section" id="sponsor">
+
+    <div class="section-heading">
+
+        <h2>Sponsorship Opportunities</h2>
+
+        <p>
+            Your support can directly transform
+            the life of a vulnerable child.
+        </p>
+
+    </div>
+
+
+    <div class="sponsorship-grid">
+
+        {% for sponsorship in sponsorships %}
+
+        <div class="sponsorship-card">
+
+            <h3>{{ sponsorship.title }}</h3>
+
+            <div class="sponsorship-amount">
+                {{ sponsorship.amount }}
+            </div>
+
+            <p>{{ sponsorship.description }}</p>
+
+            <a href="{% url 'contact' %}" class="sponsor-btn">
+                Become A Sponsor
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="children-profiles">
+
+    <h2>Children In Need Of Support</h2>
+
+    <div class="profiles-grid">
+
+        {% for child in featured_children %}
+
+        <div class="child-card">
+
+            <img src="{{ child.image.url }}" alt="{{ child.name }}">
+
+            <div class="child-card-content">
+
+                <h3>{{ child.name }}</h3>
+
+                <p class="child-age">
+                    {{ child.age }} years old
+                </p>
+
+                <p>
+                    {{ child.short_story }}
+                </p>
+
+                <div class="child-needs">
+                    Needs: {{ child.needs }}
+                </div>
+
+                <a href="{% url 'contact' %}" class="children-btn">
+                    Sponsor {{ child.name }}
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="impact-stories">
+
+    <h2>Stories Of Hope</h2>
+
+    <div class="impact-grid">
+
+        {% for story in impact_stories %}
+
+        <div class="impact-card">
+
+            <img src="{{ story.image.url }}" alt="{{ story.child_name }}">
+
+            <div class="impact-content">
+
+                <h3>{{ story.child_name }}</h3>
+
+                <p>
+                    {{ story.testimony }}
+                </p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="children-scripture">
+
+    <div class="children-scripture-box">
+
+        <h2>Our Calling</h2>
+
+        <p class="children-scripture-text">
+            “Religion that God our Father accepts as pure and faultless is this:
+            to look after orphans and widows in their distress...”
+            — James 1:27
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="children-cta">
+
+    <h2>You Can Change A Child’s Future</h2>
+
+    <p>
+        Through prayer, sponsorship,
+        donations, and partnership,
+        you can help bring hope and restoration
+        to children in Nimule.
+    </p>
+
+    <div class="children-cta-buttons">
+
+        <a href="{% url 'get_involved' %}" class="children-btn">
+            Support The Ministry
+        </a>
+
+        <a href="{% url 'contact' %}" class="children-btn children-btn-outline">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

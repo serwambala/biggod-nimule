@@ -1,0 +1,155 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero" style="background-image: url('{% static "images/hero.jpg" %}');">
+
+    <h1>Big God International Revival Ministries – Nimule</h1>
+
+    <p>Bringing hope, love, and restoration to children in Nimule, South Sudan.</p>
+
+
+    
+    <div class="hero-buttons">
+
+   
+        <a href="{{ latest_sermon.video_url }}" target="_blank" class="special-hero-button">
+            Watch Latest Sermon
+        </a>
+    
+
+    <a href="/get-involved/" class="special-hero-button">
+        Support the Children
+    </a>
+
+</div>        
+</section>
+
+<hr>
+<!-- SCRIPTURE/HOPE STATEMENT -->
+<section class="hope-section">
+
+    <h2>Restoring Hope Through Faith</h2>
+
+    <p class="scripture">
+        “Defend the weak and the fatherless;
+        uphold the cause of the poor and the oppressed.”
+        — Psalm 82:3
+    </p>
+
+    <p>
+         Many children in Nimule, South Sudan, face hardship, displacement,
+        and limited access to education and spiritual support.
+        At Big God International Revival Ministries, through prayer, community outreach, mentorship and compassion, we are committed
+        to restoring hope. We believe every child in Nimule deserves dignity and a future.
+    </p>
+
+    <div class="hope-buttons">
+        <a href="/contact/" class="btn">Contact Us</a>
+        <a href="/gallery/" class="btn btn-outline">View Gallery</a>
+    </div>
+
+</section>
+
+<!-- CARDS -->
+<section>
+    <h2>What We Do</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="{% static 'images/church.jpg' %}" style="width:100%; border-radius:8px;">
+            <h3>Big God Church</h3>
+            <p>Sermons, worship, teachings, and community fellowship.</p>
+            <p>
+                Spreading the Gospel, nurturing believers,
+                and raising a spiritually strong community in Nimule.
+            </p>
+            <a href="{% url 'church' %}" class="cta-button">Explore Church</a>
+        </div>
+        
+        <div class="card">
+            <img src="{% static 'images/children.jpg' %}" style="width:100%; border-radius:8px;">
+            <h3>Children’s Ministry</h3>
+            <p>Stories, needs, and support for children in Nimule.</p>
+            <p>
+                Supporting vulnerable children through care,
+                mentorship, prayer, and hope-centered programs.
+            </p>
+            <a href="{% url 'children' %}" class="cta-button">View Children’s Ministry</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- IMPACT STATS -->
+<section class="stats-section">
+
+    <h2>Our Impact</h2>
+
+    <div class="stats-container">
+
+        <div class="stat-box">
+            <h3>100+</h3>
+            <p>Children Supported</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>2</h3>
+            <p>Active Ministries</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>Weekly</h3>
+            <p>Church Services</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+
+    <h2>Voices of Hope</h2>
+
+    <div class="testimonial">
+
+        <p>
+            “Through this ministry, I have seen children regain hope, education,
+            and a sense of belonging. God is truly working in Nimule.”
+        </p>
+
+        <h4>- Ministry Worker</h4>
+
+    </div>
+
+</section>
+
+
+
+<!-- CALL TO ACTION -->
+<section class="cta-section">
+
+    <h2>Partner With Us</h2>
+
+    <p>
+        You can make a difference in the lives of children in Nimule through prayer,
+        support, and partnership with our ministry.
+    </p>
+
+    <div class="cta-buttons">
+        <a href="/get-involved/" class="cta-button">Get Involved</a>
+        <a href="/children/" class="cta-button">Support Children</a>
+        <a href="/about/" class="cta-button">Learn More</a>
+    </div>
+
+</section>
+
+{% endblock %}
