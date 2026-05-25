@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://big-god-church-nimule.onrender.com/sitemap.xml
