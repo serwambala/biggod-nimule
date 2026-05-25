@@ -2,37 +2,37 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'pages/home.html')
 
 def church(request):
-    return render(request, 'church.html')
+    return render(request, 'pages/church.html')
 
 def children(request):
-    return render(request, 'children.html')
+    return render(request, 'pages/children.html')
 
 def get_involved(request):
-    return render(request, 'get_involved.html')
+    return render(request, 'pages/get_involved.html')
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'pages/about.html')
 
 def story(request):
-    return render(request, 'story.html')
+    return render(request, 'pages/story.html')
 
 def vision(request):
-    return render(request, 'vision.html')
+    return render(request, 'pages/vision.html')
 
 def core_values(request):
-    return render(request, 'core-values.html')
+    return render(request, 'pages/core-values.html')
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    return render(request, 'pages/gallery.html')
 
 def leadership(request):
-    return render(request, 'leadership.html')
+    return render(request, 'pages/leadership.html')
 
 def statement_of_faith(request):
-    return render(request, 'statement-of-faith.html')
+    return render(request, 'pages/statement-of-faith.html')
 
 
 from django.http import HttpResponse
@@ -54,7 +54,7 @@ def contact(request):
 
         return HttpResponse("Message received. Thank you for contacting us.")
 
-    return render(request, "contact.html")
+    return render(request, "pages/contact.html")
 
 from django.shortcuts import render, redirect
 
@@ -103,7 +103,7 @@ def church(request):
 
     return render(
         request,
-        'church.html',
+        'pages/church.html',
         context
     )
 def sermon_detail(request, id):
@@ -120,4 +120,29 @@ def home(request):
         'latest_sermon': latest_sermon
     }
 
-    return render(request, 'home.html', context)
+    return render(request, 'pages/home.html', context)
+
+from django.shortcuts import render
+from .models import (
+    SponsorshipOption,
+    ChildProfile,
+    ChildrenProgram,
+    ImpactStory,
+)
+
+
+def children(request):
+
+    sponsorships = SponsorshipOption.objects.all()
+    featured_children = ChildProfile.objects.all()
+    programs = ChildrenProgram.objects.all()
+    impact_stories = ImpactStory.objects.all()
+
+    context = {
+        'sponsorships': sponsorships,
+        'featured_children': featured_children,
+        'programs': programs,
+        'impact_stories': impact_stories,
+    }
+
+    return render(request, 'pages/children.html', context)

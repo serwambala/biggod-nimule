@@ -2325,3 +2325,72 @@ body {
     }
 
 }
+
+/* =========================================
+   CHILDREN PAGE
+========================================= */
+
+.children-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 160px 20px;
+    text-align: center;
+    color: white;
+}
+
+.children-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.60);
+}
+
+.children-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: auto;
+}
+
+.children-hero-content h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+}
+
+.children-hero-content p {
+    font-size: 21px;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+.children-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.children-btn {
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.children-btn:hover {
+    background: #1b5e20;
+    transform: translateY(-3px);
+}
+
+.children-btn-outline {
+    background: transparent;
+    border: 2px solid #4caf50;
+}
+
+.children-btn-outline:hover {
+    background: #4caf50;
+}

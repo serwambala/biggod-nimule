@@ -58,3 +58,16 @@ class TestimonyAdmin(admin.ModelAdmin):
         'name',
         'message'
     )
+
+from django.contrib import admin
+from .models import (
+    SponsorshipOption,
+    ChildProfile,
+    ChildrenProgram,
+    ImpactStory,
+)
+
+admin.site.register(SponsorshipOption)
+admin.site.register(ChildProfile)
+admin.site.register(ChildrenProgram)
+admin.site.register(ImpactStory)
