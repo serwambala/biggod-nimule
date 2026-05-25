@@ -40,6 +40,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sitemaps',
     'pages',
     'django.contrib.admin',
     'django.contrib.auth',
