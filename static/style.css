@@ -2036,6 +2036,8 @@ body {
 
     .church-intro-image img {
         max-width: 100%;
+        background: #1f3b4d;
+
     }
 
     .church-intro-text h2 {
