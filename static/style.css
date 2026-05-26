@@ -2613,7 +2613,7 @@ body {
 }
 
 .child-image-wrapper img {
-    width: 100%;
+    width: 20%;
     height: auto;
     object-fit: contain;
 }
