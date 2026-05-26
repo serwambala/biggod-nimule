@@ -156,12 +156,5 @@ class ChildProfile(models.Model):
     def __str__(self):
         return self.name
 
-class ChildrenProgram(models.Model):
-    title = models.CharField(max_length=120)
-    image = models.ImageField(upload_to='children_programs/')
-    description = models.TextField()
-
-    def __str__(self):
-        return self.title
 
 
