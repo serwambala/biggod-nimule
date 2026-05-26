@@ -60,14 +60,35 @@ class TestimonyAdmin(admin.ModelAdmin):
     )
 
 from django.contrib import admin
-from .models import (
-    SponsorshipOption,
-    ChildProfile,
-    ChildrenProgram,
-    ImpactStory,
-)
+from .models import ChildProfile
 
-admin.site.register(SponsorshipOption)
-admin.site.register(ChildProfile)
-admin.site.register(ChildrenProgram)
-admin.site.register(ImpactStory)
+
+@admin.register(ChildProfile)
+class ChildProfileAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "name",
+        "age",
+        "gender",
+        "sponsorship_level",
+        "sponsorship_status",
+        "featured",
+    )
+
+    list_filter = (
+        "gender",
+        "sponsorship_level",
+        "sponsorship_status",
+        "featured",
+    )
+
+    search_fields = (
+        "name",
+        "dream",
+        "school",
+    )
+
+    list_editable = (
+        "featured",
+        "sponsorship_status",
+    )

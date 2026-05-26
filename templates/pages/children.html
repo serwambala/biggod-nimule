@@ -3,197 +3,301 @@
 
 {% block content %}
 
-<section class="children-hero" style="background-image: url('{% static "images/children-hero.jpg" %}');">
+<!-- HERO SECTION -->
+<section class="children-hero"
+style="background-image: url('{% static "images/children-hero.jpg" %}');">
 
     <div class="children-hero-overlay"></div>
 
     <div class="children-hero-content">
 
-        <h1>Children’s Ministry</h1>
+        <h1>Restoring Hope To Children In Nimule</h1>
 
         <p>
-            Bringing hope, education, care, spiritual guidance,
-            and a future to vulnerable children in Nimule,
-            South Sudan.
+            Every child deserves love, safety, education, spiritual guidance,
+            and the opportunity to dream again.
         </p>
 
         <div class="children-hero-buttons">
-
-            <a href="#sponsor" class="children-btn">
+            <a href="/get-involved/" class="children-btn">
                 Sponsor A Child
             </a>
 
-            <a href="{% url 'get_involved' %}" class="children-btn children-btn-outline">
-                Get Involved
+            <a href="/contact/" class="children-btn children-btn-outline">
+                Become A Partner
             </a>
-
         </div>
 
     </div>
 
 </section>
 
-
+<!-- INTRO SECTION -->
 <section class="children-intro">
 
     <div class="children-intro-container">
 
-        <h2>Restoring Hope One Child At A Time</h2>
+        <div class="children-intro-text">
 
-        <p>
-            Many children in Nimule face poverty,
-            displacement, lack of education,
-            emotional trauma, hunger,
-            and spiritual neglect.
-        </p>
+            <h2>Why We Serve Children</h2>
 
-        <p>
-            Through Big God International Revival Ministries,
-            we provide practical care and spiritual support
-            through feeding programs, school support,
-            discipleship, mentorship, prayer,
-            and community care.
-        </p>
+            <p>
+                Many children in Nimule face poverty, displacement,
+                limited access to education, trauma, and spiritual neglect.
+                Through Big God International Revival Ministries,
+                we are committed to raising a generation filled with hope,
+                dignity, and purpose.
+            </p>
 
-    </div>
+            <p>
+                Our ministry provides practical care, spiritual mentorship,
+                educational support, feeding programs, and safe community
+                environments where children can grow and thrive.
+            </p>
 
-</section>
-
-
-<section class="children-programs">
-
-    <h2>What We Do For Children</h2>
-
-    <div class="programs-grid">
-
-        {% for program in programs %}
-
-        <div class="program-card">
-
-            <img src="{{ program.image.url }}" alt="{{ program.title }}">
-
-            <div class="program-content">
-
-                <h3>{{ program.title }}</h3>
-
-                <p>{{ program.description }}</p>
-
+            <div class="children-scripture">
+                “Defend the weak and the fatherless;
+                uphold the cause of the poor and oppressed.”
+                — Psalm 82:3
             </div>
 
         </div>
 
-        {% endfor %}
+        <div class="children-intro-image">
+            <img src="{% static 'images/children-intro.jpg' %}" alt="Children Ministry">
+        </div>
 
     </div>
 
 </section>
 
+<!-- SERVICES SECTION -->
+<section class="children-services">
 
-<section class="sponsorship-section" id="sponsor">
+    <h2>What We Provide</h2>
 
-    <div class="section-heading">
+    <div class="children-services-grid">
 
-        <h2>Sponsorship Opportunities</h2>
+        <div class="children-service-card">
+            <h3>Education Support</h3>
+            <p>
+                School fees assistance, school supplies,
+                mentorship, and academic encouragement.
+            </p>
+        </div>
 
-        <p>
-            Your support can directly transform
-            the life of a vulnerable child.
-        </p>
+        <div class="children-service-card">
+            <h3>Feeding Programs</h3>
+            <p>
+                Providing meals and nutritional support
+                to vulnerable children and families.
+            </p>
+        </div>
+
+        <div class="children-service-card">
+            <h3>Spiritual Mentorship</h3>
+            <p>
+                Teaching children the Word of God,
+                prayer, worship, and Christian values.
+            </p>
+        </div>
+
+        <div class="children-service-card">
+            <h3>Medical Assistance</h3>
+            <p>
+                Helping children access basic medical care,
+                medication, and wellness support.
+            </p>
+        </div>
+
+        <div class="children-service-card">
+            <h3>Safe Community</h3>
+            <p>
+                Creating safe spaces where children experience
+                love, encouragement, and belonging.
+            </p>
+        </div>
+
+        <div class="children-service-card">
+            <h3>Clothing & Essentials</h3>
+            <p>
+                Providing clothes, hygiene supplies,
+                and emergency child assistance.
+            </p>
+        </div>
 
     </div>
 
+</section>
+
+<!-- SPONSORSHIP SECTION -->
+<section class="sponsorship-section">
+
+    <h2>Choose A Sponsorship Option</h2>
+
+    <p class="sponsorship-intro">
+        Your support can directly transform a child’s life.
+    </p>
 
     <div class="sponsorship-grid">
 
-        {% for sponsorship in sponsorships %}
-
         <div class="sponsorship-card">
 
-            <h3>{{ sponsorship.title }}</h3>
+            <h3>Bronze Sponsor</h3>
 
-            <div class="sponsorship-amount">
-                {{ sponsorship.amount }}
+            <div class="sponsorship-price">
+                $15 / Month
             </div>
 
-            <p>{{ sponsorship.description }}</p>
+            <ul>
+                <li>School supplies</li>
+                <li>Basic child support</li>
+                <li>Prayer updates</li>
+            </ul>
 
-            <a href="{% url 'contact' %}" class="sponsor-btn">
-                Become A Sponsor
+            <a href="/contact/" class="children-btn">
+                Support
             </a>
 
         </div>
 
-        {% endfor %}
+        <div class="sponsorship-card featured-sponsorship">
+
+            <h3>Silver Sponsor</h3>
+
+            <div class="sponsorship-price">
+                $35 / Month
+            </div>
+
+            <ul>
+                <li>Meals assistance</li>
+                <li>Education support</li>
+                <li>Child mentorship</li>
+            </ul>
+
+            <a href="/contact/" class="children-btn">
+                Sponsor
+            </a>
+
+        </div>
+
+        <div class="sponsorship-card">
+
+            <h3>Gold Sponsor</h3>
+
+            <div class="sponsorship-price">
+                $60 / Month
+            </div>
+
+            <ul>
+                <li>Full child sponsorship</li>
+                <li>Medical support</li>
+                <li>Priority ministry updates</li>
+            </ul>
+
+            <a href="/contact/" class="children-btn">
+                Sponsor
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
+<!-- FEATURED CHILDREN -->
+<section class="featured-children">
 
-<section class="children-profiles">
+    <div class="featured-children-header">
 
-    <h2>Children In Need Of Support</h2>
+        <h2>Meet The Children</h2>
 
-    <div class="profiles-grid">
+        <p>
+            Behind every face is a story, a dream,
+            and a future that can be transformed through love and support.
+        </p>
 
-        {% for child in featured_children %}
+    </div>
+
+    <div class="children-grid">
+
+        {% for child in children_profiles %}
 
         <div class="child-card">
 
-            <img src="{{ child.image.url }}" alt="{{ child.name }}">
+            <div class="child-image-wrapper">
+
+                {% if child.image %}
+                    <img src="{{ child.image.url }}" alt="{{ child.name }}">
+                {% else %}
+                    <img src="{% static 'images/default-child.jpg' %}" alt="Child Profile">
+                {% endif %}
+
+                {% if child.is_featured %}
+                    <span class="featured-badge">
+                        Urgent Need
+                    </span>
+                {% endif %}
+
+            </div>
 
             <div class="child-card-content">
 
                 <h3>{{ child.name }}</h3>
 
-                <p class="child-age">
-                    {{ child.age }} years old
-                </p>
+                <div class="child-meta">
+                    <span>Age: {{ child.age }}</span>
 
-                <p>
-                    {{ child.short_story }}
-                </p>
-
-                <div class="child-needs">
-                    Needs: {{ child.needs }}
+                    {% if child.gender %}
+                        <span>{{ child.gender }}</span>
+                    {% endif %}
                 </div>
 
-                <a href="{% url 'contact' %}" class="children-btn">
-                    Sponsor {{ child.name }}
-                </a>
-
-            </div>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-
-<section class="impact-stories">
-
-    <h2>Stories Of Hope</h2>
-
-    <div class="impact-grid">
-
-        {% for story in impact_stories %}
-
-        <div class="impact-card">
-
-            <img src="{{ story.image.url }}" alt="{{ story.child_name }}">
-
-            <div class="impact-content">
-
-                <h3>{{ story.child_name }}</h3>
-
-                <p>
-                    {{ story.testimony }}
+                <p class="child-story">
+                    {{ child.story|truncatewords:35 }}
                 </p>
 
+                {% if child.dream %}
+                <div class="child-dream">
+                    <strong>Dream:</strong>
+                    {{ child.dream }}
+                </div>
+                {% endif %}
+
+                {% if child.need %}
+                <div class="child-need">
+                    <strong>Current Need:</strong>
+                    {{ child.need }}
+                </div>
+                {% endif %}
+
+                <div class="child-footer">
+
+                    {% if child.sponsorship_amount %}
+                    <div class="support-amount">
+                        ${{ child.sponsorship_amount }}/month
+                    </div>
+                    {% endif %}
+
+                    <a href="/contact/" class="children-btn">
+                        Sponsor {{ child.name }}
+                    </a>
+
+                </div>
+
             </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="no-children-message">
+
+            <h3>Children Profiles Coming Soon</h3>
+
+            <p>
+                We are preparing child sponsorship profiles and stories.
+            </p>
 
         </div>
 
@@ -203,43 +307,55 @@
 
 </section>
 
+<!-- IMPACT SECTION -->
+<section class="children-impact">
 
-<section class="children-scripture">
+    <h2>Our Impact</h2>
 
-    <div class="children-scripture-box">
+    <div class="children-impact-grid">
 
-        <h2>Our Calling</h2>
+        <div class="impact-box">
+            <h3>100+</h3>
+            <p>Children Reached</p>
+        </div>
 
-        <p class="children-scripture-text">
-            “Religion that God our Father accepts as pure and faultless is this:
-            to look after orphans and widows in their distress...”
-            — James 1:27
-        </p>
+        <div class="impact-box">
+            <h3>300+</h3>
+            <p>Meals Provided</p>
+        </div>
+
+        <div class="impact-box">
+            <h3>50+</h3>
+            <p>Children Mentored</p>
+        </div>
+
+        <div class="impact-box">
+            <h3>Weekly</h3>
+            <p>Outreach Programs</p>
+        </div>
 
     </div>
 
 </section>
 
-
+<!-- CTA -->
 <section class="children-cta">
 
     <h2>You Can Change A Child’s Future</h2>
 
     <p>
-        Through prayer, sponsorship,
-        donations, and partnership,
-        you can help bring hope and restoration
-        to children in Nimule.
+        Your partnership can bring education, food,
+        spiritual support, and hope to vulnerable children in Nimule.
     </p>
 
     <div class="children-cta-buttons">
 
-        <a href="{% url 'get_involved' %}" class="children-btn">
-            Support The Ministry
+        <a href="/get-involved/" class="children-btn">
+            Sponsor A Child
         </a>
 
-        <a href="{% url 'contact' %}" class="children-btn children-btn-outline">
-            Contact Us
+        <a href="/contact/" class="children-btn children-btn-outline">
+            Contact Ministry
         </a>
 
     </div>

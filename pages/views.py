@@ -122,27 +122,28 @@ def home(request):
 
     return render(request, 'pages/home.html', context)
 
+
+
+
 from django.shortcuts import render
-from .models import (
-    SponsorshipOption,
-    ChildProfile,
-    ChildrenProgram,
-    ImpactStory,
-)
+from .models import ChildProfile
 
 
 def children(request):
 
-    sponsorships = SponsorshipOption.objects.all()
-    featured_children = ChildProfile.objects.all()
-    programs = ChildrenProgram.objects.all()
-    impact_stories = ImpactStory.objects.all()
+    children_profiles = ChildProfile.objects.all()
+
+    featured_children = ChildProfile.objects.filter(
+        featured=True
+    )[:3]
 
     context = {
-        'sponsorships': sponsorships,
-        'featured_children': featured_children,
-        'programs': programs,
-        'impact_stories': impact_stories,
+        "children_profiles": children_profiles,
+        "featured_children": featured_children,
     }
 
-    return render(request, 'pages/children.html', context)
+    return render(
+        request,
+        "pages/children.html",
+        context
+    )
