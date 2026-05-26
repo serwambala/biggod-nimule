@@ -2624,12 +2624,6 @@ body {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .child-image-wrapper img {
-        width: 140px;
-        height: 140px;
-    }
-}
 
 .featured-badge {
     position: absolute;
