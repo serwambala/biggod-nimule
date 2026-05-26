@@ -2002,7 +2002,7 @@ body {
 
 .church-intro-image img {
     width: 100%;
-    background-color: #1f3b4d;
+    background: #1f3b4d;
     max-width: 500px;
     border-radius: 18px;
     display: block;
