@@ -2614,13 +2614,14 @@ body {
 }
 
 .child-image-wrapper img {
-    width: 180px;
-    height: 180px;
+     width: clamp(120px, 40vw, 200px);
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
     object-position: top center;
     border: 5px solid #f5f5f5;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: block;
 }
 
 @media (max-width: 768px) {
