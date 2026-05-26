@@ -1982,28 +1982,65 @@ body {
 /* INTRO SECTION */
 
 .church-intro {
-    background: #f5f5f5;
-    padding: 90px 20px;
-    text-align: center;
+    background: #1f3c88;   /* adjust to your nav color */
+    padding: 80px 20px;
+    color: #ffffff;
 }
 
-.church-intro .container {
-    max-width: 850px;
-    margin: auto;
+.church-intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
 }
 
-.church-intro h2 {
-    color: #1f3b4d;
-    font-size: 38px;
+.church-intro-image {
+    flex: 1;
+    min-width: 280px;
+}
+
+.church-intro-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 18px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.church-intro-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.church-intro-text h2 {
+    font-size: 2.5rem;
     margin-bottom: 25px;
+    color: #ffffff;
 }
 
-.church-intro p {
-    color: #444;
+.church-intro-text p {
+    font-size: 1.1rem;
     line-height: 1.9;
     margin-bottom: 20px;
+    color: rgba(255,255,255,0.92);
 }
 
+@media (max-width: 768px) {
+
+    .church-intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .church-intro-image img {
+        max-width: 100%;
+    }
+
+    .church-intro-text h2 {
+        font-size: 2rem;
+    }
+}
 
 /* LATEST SERMON */
 
