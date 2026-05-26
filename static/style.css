@@ -1998,11 +1998,12 @@ body {
 .church-intro-image {
     flex: 1;
     min-width: 280px;
+     background-color: #1f3b4d;
 }
 
 .church-intro-image img {
     width: 100%;
-    background: #1f3b4d;
+    background-color: #1f3b4d;
     max-width: 500px;
     border-radius: 18px;
     display: block;
