@@ -1982,7 +1982,7 @@ body {
 /* INTRO SECTION */
 
 .church-intro {
-    background: #1f3c88;   /* adjust to your nav color */
+    background: #1f3b4d;   /* adjust to your nav color */
     padding: 80px 20px;
     color: #ffffff;
 }
@@ -2002,6 +2002,7 @@ body {
 
 .church-intro-image img {
     width: 100%;
+    background-color: #1f3b4d;
     max-width: 500px;
     border-radius: 18px;
     display: block;
