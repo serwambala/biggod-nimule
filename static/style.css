@@ -2827,3 +2827,267 @@ body {
         height: 260px;
     }
 }
+
+/* =========================================
+   GET INVOLVED PAGE
+========================================= */
+
+/* HERO */
+
+.get-involved-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-content h1 {
+    font-size: 54px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #1b5e20;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    background: #4caf50;
+}
+
+/* INTRO SECTION */
+
+.involvement-section {
+    background: #f5f5f5;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.section-heading {
+    max-width: 850px;
+    margin: auto auto 60px;
+}
+
+.section-heading h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.section-heading p {
+    color: #444;
+    line-height: 1.9;
+}
+
+/* GRID */
+
+.involvement-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* CARDS */
+
+.involvement-card {
+    background: #f8f8f8;
+    padding: 35px 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.involvement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.involvement-card h3 {
+    color: #2e7d32;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.involvement-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* WHY SERVE */
+
+.why-serve-section {
+    background: white;
+    padding: 90px 20px;
+}
+
+.why-serve-content {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.why-serve-content h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.verse {
+    max-width: 850px;
+    margin: auto auto 60px;
+    color: #444;
+    line-height: 1.9;
+    font-style: italic;
+}
+
+/* SERVE BOXES */
+
+.serve-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.serve-box {
+    background: #f3f8f4;
+    border-left: 6px solid #4caf50;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.serve-box h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.serve-box p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* SUPPORT SECTION */
+
+.support-section {
+    background: #f5f5f5;
+    padding: 90px 20px;
+}
+
+.support-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.support-content h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.support-content p {
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+/* CTA SECTION */
+
+.cta-section {
+    background: #1f3b4d;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .section-heading h2,
+    .why-serve-content h2,
+    .support-content h2,
+    .cta-content h2 {
+        font-size: 30px;
+    }
+
+}

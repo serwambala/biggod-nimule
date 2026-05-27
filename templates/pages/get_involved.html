@@ -1,14 +1,189 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<section>
-    <h1>Get Involved</h1>
+<!-- HERO SECTION -->
+<section class="get-involved-hero">
+    <div class="hero-overlay">
 
-    <p>
-        You can support the ministry through prayer, partnerships, donations,
-        volunteering, and sharing our mission with others.
-    </p>
+        <div class="hero-content">
+            <h1>Get Involved</h1>
+
+            <p>
+                Join us in transforming lives through worship,
+                outreach, prayer, and service.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="{% url 'contact' %}" class="btn-primary">
+                    Volunteer Today
+                </a>
+
+                <a href="{% url 'contact' %}" class="btn-secondary">
+                    Support The Ministry
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- WAYS TO GET INVOLVED -->
+<section class="involvement-section">
+
+    <div class="section-heading">
+        <h2>Ways To Get Involved</h2>
+
+        <p>
+            There is a place for everyone to serve and grow in ministry.
+        </p>
+    </div>
+
+    <div class="involvement-grid">
+
+        <div class="involvement-card">
+            <h3>Worship Team</h3>
+
+            <p>
+                Help lead the congregation in worship through music,
+                praise, and encouragement.
+            </p>
+        </div>
+
+        <div class="involvement-card">
+            <h3>Children Ministry</h3>
+
+            <p>
+                Serve and mentor children with love,
+                care, and biblical teaching.
+            </p>
+        </div>
+
+        <div class="involvement-card">
+            <h3>Community Outreach</h3>
+
+            <p>
+                Participate in evangelism, missions,
+                and support programs in the community.
+            </p>
+        </div>
+
+        <div class="involvement-card">
+            <h3>Prayer Team</h3>
+
+            <p>
+                Stand with others in prayer and spiritual support
+                for families and communities.
+            </p>
+        </div>
+
+        <div class="involvement-card">
+            <h3>Media & Tech</h3>
+
+            <p>
+                Support sound, photography, livestreams,
+                and church communication.
+            </p>
+        </div>
+
+        <div class="involvement-card">
+            <h3>Hospitality Team</h3>
+
+            <p>
+                Welcome visitors and help create a warm,
+                loving church environment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY SERVE -->
+<section class="why-serve-section">
+
+    <div class="why-serve-content">
+
+        <h2>Why Serve?</h2>
+
+        <p class="verse">
+            “Each one should use whatever gift they have received
+            to serve others.” — 1 Peter 4:10
+        </p>
+
+        <div class="serve-points">
+
+            <div class="serve-box">
+                <h3>Grow Spiritually</h3>
+
+                <p>
+                    Serving strengthens your faith and deepens your
+                    relationship with God.
+                </p>
+            </div>
+
+            <div class="serve-box">
+                <h3>Build Community</h3>
+
+                <p>
+                    Connect with others and become part of a caring
+                    church family.
+                </p>
+            </div>
+
+            <div class="serve-box">
+                <h3>Impact Lives</h3>
+
+                <p>
+                    Help bring hope, encouragement, and transformation
+                    to others.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SUPPORT SECTION -->
+<section class="support-section">
+
+    <div class="support-content">
+
+        <h2>Support The Ministry</h2>
+
+        <p>
+            Your support helps us reach communities, care for children,
+            and continue sharing the Gospel.
+        </p>
+
+        <a href="{% url 'contact' %}" class="btn-primary">
+            Partner With Us
+        </a>
+
+    </div>
+
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+
+    <div class="cta-content">
+
+        <h2>Be Part Of What God Is Doing</h2>
+
+        <p>
+            We believe everyone has a role in God’s work.
+            Join us and make a difference today.
+        </p>
+
+        <a href="{% url 'contact' %}" class="btn-secondary">
+            Contact Us
+        </a>
+
+    </div>
 
 </section>
 
