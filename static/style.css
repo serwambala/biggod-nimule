@@ -2001,14 +2001,7 @@ body {
      background-color: #1f3b4d;
 }
 
-.church-intro-image img {
-    width: 100%;
-    background-color: #1f3b4d;
-    max-width: 500px;
-    border-radius: 18px;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
+
 
 .church-intro-text {
     flex: 1;
