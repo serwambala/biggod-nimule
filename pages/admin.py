@@ -92,3 +92,28 @@ class ChildProfileAdmin(admin.ModelAdmin):
         "featured",
         "sponsorship_status",
     )
+
+from django.contrib import admin
+from .models import GivePartner
+
+
+@admin.register(GivePartner)
+class GivePartnerAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'name',
+        'phone',
+        'purpose',
+        'submitted_at'
+    )
+
+    search_fields = (
+        'name',
+        'phone',
+        'email'
+    )
+
+    list_filter = (
+        'purpose',
+        'submitted_at'
+    )

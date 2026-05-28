@@ -31,9 +31,6 @@ def gallery(request):
 def leadership(request):
     return render(request, 'pages/leadership.html')
 
-def give(request):
-    return render(request, 'pages/give.html')
-
 
 def statement_of_faith(request):
     return render(request, 'pages/statement-of-faith.html')
@@ -151,3 +148,35 @@ def children(request):
         "pages/children.html",
         context
     )
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
+from .models import GivePartner
+
+
+def give(request):
+
+    if request.method == 'POST':
+
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        purpose = request.POST.get('purpose')
+        message_text = request.POST.get('message')
+
+        GivePartner.objects.create(
+            name=name,
+            phone=phone,
+            email=email,
+            purpose=purpose,
+            message=message_text
+        )
+
+        messages.success(
+            request,
+            "Thank you for supporting the ministry."
+        )
+
+        return redirect('give')
+
+    return render(request, 'pages/give.html')

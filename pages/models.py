@@ -158,3 +158,33 @@ class ChildProfile(models.Model):
 
 
 
+from django.db import models
+
+
+class GivePartner(models.Model):
+
+    PURPOSE_CHOICES = [
+        ('Tithe', 'Tithe'),
+        ('Offering', 'Offering'),
+        ('Children Ministry', 'Children Ministry'),
+        ('Outreach', 'Outreach'),
+        ('General Support', 'General Support'),
+    ]
+
+    name = models.CharField(max_length=150)
+
+    phone = models.CharField(max_length=30)
+
+    email = models.EmailField(blank=True, null=True)
+
+    purpose = models.CharField(
+        max_length=50,
+        choices=PURPOSE_CHOICES
+    )
+
+    message = models.TextField(blank=True)
+
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
