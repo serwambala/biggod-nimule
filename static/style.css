@@ -3299,35 +3299,6 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-.form-group {
-    margin-bottom: 22px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #1f3b4d;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #4caf50;
-}
-
 .give-submit-btn {
     width: 100%;
     background: #4caf50;
@@ -3460,4 +3431,78 @@ body {
     border-left: 5px solid #4caf50;
     border-radius: 6px;
     margin-bottom: 25px;
+}
+
+/* =========================================
+   GIVE FORM
+========================================= */
+
+.give-form {
+    width: 100%;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #1f3b4d;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.give-form input,
+.give-form select {
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    color: #333;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.give-form input:focus,
+.give-form select:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+}
+
+.give-form input::placeholder {
+    color: #888;
+}
+
+.give-form select {
+    cursor: pointer;
+}
+
+.give-btn {
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.give-btn:hover {
+    background: #2e7d32;
+    transform: translateY(-2px);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .give-form {
+        padding: 30px 22px;
+    }
+
 }

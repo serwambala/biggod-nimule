@@ -169,57 +169,160 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
 
         {% endif %}
 
+        <p class="give-note">
 
-        <div class="giving-form-card">
+            Please complete your Mobile Money transfer first,
+            then submit the transaction reference code below
+            for confirmation.
 
-            <form method="POST">
+        </p>    
 
-                {% csrf_token %}
 
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" required>
-                </div>
+       <form method="POST" class="give-form">
 
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" required>
-                </div>
+    {% csrf_token %}
 
-                <div class="form-group">
-                    <label>Email Address (Optional)</label>
-                    <input type="email" name="email">
-                </div>
+    <!-- FULL NAME -->
+    <div class="form-group">
 
-                <div class="form-group">
-                    <label>Purpose Of Giving</label>
+        <label for="full_name">
+            Full Name
+        </label>
 
-                    <select name="purpose">
+        <input type="text"
+               id="full_name"
+               name="full_name"
+               required>
 
-                        <option>Tithe</option>
-                        <option>Offering</option>
-                        <option>Children’s Ministry</option>
-                        <option>Outreach</option>
-                        <option>General Support</option>
+    </div>
 
-                    </select>
-                </div>
+    <!-- PHONE NUMBER -->
+    <div class="form-group">
 
-                <div class="form-group">
-                    <label>Message / Prayer Request</label>
+        <label for="phone_number">
+            Phone Number
+        </label>
 
-                    <textarea
-                    name="message"
-                    rows="5"></textarea>
-                </div>
+        <input type="tel"
+               id="phone_number"
+               name="phone_number"
+               required>
 
-                <button type="submit" class="give-submit-btn">
-                    Submit
-                </button>
+    </div>
 
-            </form>
+    <!-- EMAIL -->
+    <div class="form-group">
 
-        </div>
+        <label for="email">
+            Email Address (Optional)
+        </label>
+
+        <input type="email"
+               id="email"
+               name="email">
+
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="form-group">
+
+        <label for="amount">
+            Donation Amount
+        </label>
+
+        <input type="number"
+               id="amount"
+               name="amount"
+               required>
+
+    </div>
+
+    <!-- PURPOSE -->
+    <div class="form-group">
+
+        <label for="purpose">
+            Purpose Of Giving
+        </label>
+
+        <select id="purpose"
+                name="purpose"
+                required>
+
+            <option value="">
+                Select Purpose
+            </option>
+
+            <option value="Tithe">
+                Tithe
+            </option>
+
+            <option value="Offering">
+                Offering
+            </option>
+
+            <option value="Children Ministry">
+                Children Ministry
+            </option>
+
+            <option value="Outreach">
+                Outreach
+            </option>
+
+            <option value="General Support">
+                General Support
+            </option>
+
+        </select>
+
+    </div>
+
+    <!-- NETWORK -->
+    <div class="form-group">
+
+        <label for="network">
+            Payment Network
+        </label>
+
+        <select id="network"
+                name="network"
+                required>
+
+            <option value="">
+                Select Network
+            </option>
+
+            <option value="MTN Mobile Money">
+                MTN Mobile Money
+            </option>
+
+            <option value="Airtel Money">
+                Airtel Money
+            </option>
+
+        </select>
+
+    </div>
+
+    <!-- TRANSACTION REFERENCE -->
+    <div class="form-group">
+
+        <label for="transaction_reference">
+            Transaction Reference Code
+        </label>
+
+        <input type="text"
+               id="transaction_reference"
+               name="transaction_reference"
+               placeholder="Example: MOMO12345"
+               required>
+
+    </div>
+
+    <button type="submit" class="give-submit-btn">
+        Submit Donation
+    </button>
+
+</form>
 
     </div>
 
