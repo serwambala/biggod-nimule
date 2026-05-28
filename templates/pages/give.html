@@ -217,12 +217,14 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
 
         <input  
             type="tel"
-            name="phone"
+            id="phone_number"
             required
-            pattern="[0-9+]{10,15}"
-            title="Enter a valid phone number (10–15 digits)"
-            oninvalid="this.setCustomValidity('Enter a valid phone number')"
-            oninput="this.setCustomValidity('')"
+        >
+
+        <input
+            type="hidden"
+            name="phone_number"
+            id="full_phone"
         >
 
     </div>
@@ -398,5 +400,75 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
     </div>
 
 </section>
+
+{% block content %}
+
+... your form ...
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
+<script>
+
+const phoneInput = document.querySelector("#phone_number");
+
+const iti = window.intlTelInput(phoneInput, {
+
+    initialCountry: "ug",
+
+    preferredCountries: [
+        "ug",
+        "ke",
+        "tz",
+        "ng",
+        "ca",
+        "us",
+        "gb"
+    ],
+
+    separateDialCode: true,
+
+    autoPlaceholder: "aggressive",
+
+    utilsScript:
+    "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
+
+});
+
+const hiddenPhoneInput =
+    document.querySelector("#full_phone");
+
+phoneInput.addEventListener("blur", function () {
+
+    if (phoneInput.value.trim()) {
+
+        if (iti.isValidNumber()) {
+
+            phoneInput.setCustomValidity("");
+
+            hiddenPhoneInput.value =
+                iti.getNumber();
+
+        } else {
+
+            phoneInput.setCustomValidity(
+                "Enter a valid phone number"
+            );
+
+            phoneInput.reportValidity();
+        }
+    }
+
+});
+
+phoneInput.addEventListener("input", function () {
+
+    phoneInput.setCustomValidity("");
+
+});
+
+
+
+</script>
+
 
 {% endblock %}

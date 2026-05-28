@@ -195,10 +195,10 @@ class Donation(models.Model):
         message="Enter a valid phone number."
     )
     phone_number = models.CharField(
-        max_length=15,
+        max_length=20,
         validators=[phone_validator]
     )
-    
+
     email = models.EmailField(blank=True, null=True)
 
     amount = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(1)])
