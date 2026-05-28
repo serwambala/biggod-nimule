@@ -401,14 +401,16 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
 
 </section>
 
-
-... your form ...
-
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
 
 <script>
 
-const phoneInput = document.querySelector("#phone_number");
+const phoneInput =
+    document.querySelector("#phone_number");
+
+const hiddenPhoneInput =
+    document.querySelector("#full_phone");
+
 
 const iti = window.intlTelInput(phoneInput, {
 
@@ -426,28 +428,57 @@ const iti = window.intlTelInput(phoneInput, {
 
     separateDialCode: true,
 
+    nationalMode: true,
+
     autoPlaceholder: "aggressive",
 
-    utilsScript:
-    "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
+    loadUtils: () => import(
+        "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
+    )
 
 });
 
-const hiddenPhoneInput =
-    document.querySelector("#full_phone");
+function updateMaxLength() {
 
-phoneInput.addEventListener("blur", function () {
+    const countryData = iti.getSelectedCountryData();
+
+    if (countryData.iso2 === "ug") {
+
+        phoneInput.setAttribute("maxlength", "10");
+
+    } else {
+
+        phoneInput.setAttribute("maxlength", "15");
+
+    }
+}
+
+updateMaxLength();
+
+phoneInput.addEventListener(
+    "countrychange",
+    updateMaxLength
+);
+
+phoneInput.addEventListener("input", function () {
+
+    phoneInput.setCustomValidity("");
+
+});
+
+
+phoneInput.form.addEventListener("submit", function (e) {
 
     if (phoneInput.value.trim()) {
 
         if (iti.isValidNumber()) {
 
-            phoneInput.setCustomValidity("");
-
             hiddenPhoneInput.value =
                 iti.getNumber();
 
         } else {
+
+            e.preventDefault();
 
             phoneInput.setCustomValidity(
                 "Enter a valid phone number"
@@ -458,14 +489,6 @@ phoneInput.addEventListener("blur", function () {
     }
 
 });
-
-phoneInput.addEventListener("input", function () {
-
-    phoneInput.setCustomValidity("");
-
-});
-
-
 
 </script>
 
