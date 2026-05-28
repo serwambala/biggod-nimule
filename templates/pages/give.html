@@ -200,7 +200,11 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
         <input type="text"
                id="full_name"
                name="full_name"
-               required>
+               minlength="2"
+               maxlength="30"
+               required
+               oninvalid="this.setCustomValidity('Name must not exceed 30 characters')"
+               oninput="this.setCustomValidity('')">
 
     </div>
 
