@@ -215,11 +215,15 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
             Phone Number
         </label>
 
-        <input type="tel"
-               id="phone_number"
-               name="phone_number"
-               pattern="^\+?\d{10,15}$"
-               required>
+        <input  
+            type="tel"
+            name="phone"
+            required
+            pattern="[0-9+]{10,15}"
+            title="Enter a valid phone number (10–15 digits)"
+            oninvalid="this.setCustomValidity('Enter a valid phone number')"
+            oninput="this.setCustomValidity('')"
+        >
 
     </div>
 
