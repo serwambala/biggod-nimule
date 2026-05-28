@@ -105,6 +105,7 @@ class DonationAdmin(admin.ModelAdmin):
         'currency',
         'amount',
         'purpose',
+        'phone_number',
         'network',
         'transaction_reference',
         'is_verified',
