@@ -189,7 +189,7 @@ def give_view(request):
 
         return redirect("thank_you")
 
-    return render(request, "give.html")
+    return render(request, "pages/give.html")
 
 def thank_you_view(request):
 
@@ -200,4 +200,4 @@ def thank_you_view(request):
 
     donation = get_object_or_404(Donation, id=donation_id)
 
-    return render(request, "thank_you.html", {"donation": donation})
+    return render(request, "pages/thank_you.html", {"donation": donation})
