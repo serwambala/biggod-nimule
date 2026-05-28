@@ -186,6 +186,13 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
 
         </p>    
 
+        {% if messages %}
+            {% for message in messages %}
+                <div class="form-success-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
         <label for="full_name">
             Full Name
         </label>

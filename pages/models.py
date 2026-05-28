@@ -161,30 +161,48 @@ class ChildProfile(models.Model):
 from django.db import models
 
 
-class GivePartner(models.Model):
+from django.db import models
+
+
+class Donation(models.Model):
 
     PURPOSE_CHOICES = [
-        ('Tithe', 'Tithe'),
-        ('Offering', 'Offering'),
-        ('Children Ministry', 'Children Ministry'),
-        ('Outreach', 'Outreach'),
-        ('General Support', 'General Support'),
+        ('tithe', 'Tithe'),
+        ('offering', 'Offering'),
+        ('children_ministry', "Children's Ministry"),
+        ('outreach', 'Outreach'),
+        ('general_support', 'General Support'),
     ]
 
-    name = models.CharField(max_length=150)
+    NETWORK_CHOICES = [
+        ('mtn', 'MTN Mobile Money'),
+        ('airtel', 'Airtel Money'),
+    ]
 
-    phone = models.CharField(max_length=30)
-
+    full_name = models.CharField(max_length=150)
+    phone_number = models.CharField(max_length=20)
     email = models.EmailField(blank=True, null=True)
+
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
 
     purpose = models.CharField(
         max_length=50,
         choices=PURPOSE_CHOICES
     )
 
-    message = models.TextField(blank=True)
+    network = models.CharField(
+        max_length=20,
+        choices=NETWORK_CHOICES
+    )
 
-    submitted_at = models.DateTimeField(auto_now_add=True)
+    transaction_reference = models.CharField(
+        max_length=100,
+        unique=True
+    )
+
+    is_verified = models.BooleanField(default=False)
+
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.full_name} - {self.amount} ({self.purpose})"

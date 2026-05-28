@@ -148,35 +148,56 @@ def children(request):
         "pages/children.html",
         context
     )
-from django.shortcuts import render, redirect
+
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from .models import Donation
 
-from .models import GivePartner
 
+def give_view(request):
 
-def give(request):
+    if request.method == "POST":
 
-    if request.method == 'POST':
+        full_name = request.POST.get("full_name")
+        phone_number = request.POST.get("phone_number")
+        email = request.POST.get("email")
+        amount = request.POST.get("amount")
+        purpose = request.POST.get("purpose")
+        network = request.POST.get("network")
+        transaction_reference = request.POST.get("transaction_reference")
 
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        purpose = request.POST.get('purpose')
-        message_text = request.POST.get('message')
+        if not full_name or not phone_number or not amount or not purpose or not network or not transaction_reference:
+            messages.error(request, "Please fill in all required fields.")
+            return redirect("give")
 
-        GivePartner.objects.create(
-            name=name,
-            phone=phone,
+        if Donation.objects.filter(transaction_reference=transaction_reference).exists():
+            messages.error(request, "Transaction reference already exists.")
+            return redirect("give")
+
+        donation = Donation.objects.create(
+            full_name=full_name,
+            phone_number=phone_number,
             email=email,
+            amount=amount,
             purpose=purpose,
-            message=message_text
+            network=network,
+            transaction_reference=transaction_reference
         )
 
-        messages.success(
-            request,
-            "Thank you for supporting the ministry."
-        )
+        # store donation id in session
+        request.session["donation_id"] = donation.id
 
-        return redirect('give')
+        return redirect("thank_you")
 
-    return render(request, 'pages/give.html')
+    return render(request, "give.html")
+
+def thank_you_view(request):
+
+    donation_id = request.session.get("donation_id")
+
+    if not donation_id:
+        return redirect("give")
+
+    donation = get_object_or_404(Donation, id=donation_id)
+
+    return render(request, "thank_you.html", {"donation": donation})

@@ -93,27 +93,22 @@ class ChildProfileAdmin(admin.ModelAdmin):
         "sponsorship_status",
     )
 
+
 from django.contrib import admin
-from .models import GivePartner
+from .models import Donation
 
 
-@admin.register(GivePartner)
-class GivePartnerAdmin(admin.ModelAdmin):
-
+@admin.register(Donation)
+class DonationAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'phone',
+        'full_name',
+        'amount',
         'purpose',
-        'submitted_at'
+        'network',
+        'transaction_reference',
+        'is_verified',
+        'created_at'
     )
 
-    search_fields = (
-        'name',
-        'phone',
-        'email'
-    )
-
-    list_filter = (
-        'purpose',
-        'submitted_at'
-    )
+    list_filter = ('purpose', 'network', 'is_verified')
+    search_fields = ('full_name', 'phone_number', 'transaction_reference')
