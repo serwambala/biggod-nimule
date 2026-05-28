@@ -157,11 +157,9 @@ class ChildProfile(models.Model):
         return self.name
 
 
-
 from django.db import models
-
-
-from django.db import models
+from django.core.validators import MinValueValidator
+from django.core.validators import RegexValidator
 
 
 class Donation(models.Model):
@@ -179,11 +177,31 @@ class Donation(models.Model):
         ('airtel', 'Airtel Money'),
     ]
 
-    full_name = models.CharField(max_length=150)
-    phone_number = models.CharField(max_length=20)
+    CURRENCY_CHOICES = [
+    ("UGX", "UGX"),
+    ("USD", "USD"),
+    ]
+
+    currency = models.CharField(
+        max_length=3,
+        choices=CURRENCY_CHOICES,
+        default="UGX"
+    )
+
+    full_name = models.CharField(max_length=30)
+
+    phone_validator = RegexValidator(
+        regex=r'^\+?\d{10,15}$',
+        message="Enter a valid phone number."
+    )
+    phone_number = models.CharField(
+        max_length=15,
+        validators=[phone_validator]
+    )
+    
     email = models.EmailField(blank=True, null=True)
 
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(1)])
 
     purpose = models.CharField(
         max_length=50,
