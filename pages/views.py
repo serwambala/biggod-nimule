@@ -31,6 +31,10 @@ def gallery(request):
 def leadership(request):
     return render(request, 'pages/leadership.html')
 
+def give(request):
+    return render(request, 'pages/give.html')
+
+
 def statement_of_faith(request):
     return render(request, 'pages/statement-of-faith.html')
 

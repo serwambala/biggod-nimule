@@ -3091,3 +3091,364 @@ body {
     }
 
 }
+
+/* =========================================
+   GIVE PAGE
+========================================= */
+
+/* HERO */
+
+.give-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 140px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.give-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.give-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: auto;
+}
+
+.give-hero h1 {
+    font-size: 54px;
+    margin-bottom: 20px;
+}
+
+.give-hero p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.give-hero-btn {
+    display: inline-block;
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.give-hero-btn:hover {
+    background: #2e7d32;
+    transform: translateY(-3px);
+}
+
+/* WAYS TO GIVE */
+
+.ways-give {
+    background: #f5f5f5;
+    padding: 90px 20px;
+}
+
+.ways-give-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: auto auto 60px;
+}
+
+.ways-give-heading h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.ways-give-heading p {
+    color: #444;
+    line-height: 1.8;
+}
+
+.ways-give-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.give-card {
+    background: #f8f8f8;
+    padding: 35px 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.give-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.give-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.give-card h3 {
+    color: #2e7d32;
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+.give-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* TRANSPARENCY */
+
+.give-transparency {
+    background: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.give-transparency h2 {
+    color: #1f3b4d;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.transparency-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.transparency-card {
+    background: #f8f8f8;
+    padding: 35px 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.transparency-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.transparency-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.transparency-card h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.transparency-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* FORM */
+
+.giving-form-section {
+    background: #f5f5f5;
+    padding: 90px 20px;
+}
+
+.giving-form-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    align-items: start;
+}
+
+.giving-form-text h2 {
+    color: #1f3b4d;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.giving-form-text p {
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.giving-form-card {
+    background: #f8f8f8;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1f3b4d;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+.give-submit-btn {
+    width: 100%;
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.give-submit-btn:hover {
+    background: #2e7d32;
+}
+
+/* SCRIPTURE */
+
+.give-scripture {
+    background: white;
+    padding: 80px 20px;
+}
+
+.give-scripture-box {
+    max-width: 850px;
+    margin: auto;
+    background: #f3f8f4;
+    padding: 40px;
+    border-left: 6px solid #4caf50;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.give-scripture-box h2 {
+    color: #1f3b4d;
+    margin-bottom: 20px;
+}
+
+.give-scripture-text {
+    color: #2e7d32;
+    font-size: 22px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* CTA */
+
+.give-cta {
+    background: #1f3b4d;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.give-cta h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.give-cta p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.give-cta-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.give-btn {
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.give-btn:hover {
+    background: #2e7d32;
+    transform: translateY(-3px);
+}
+
+.give-btn-outline {
+    background: transparent;
+    border: 2px solid #4caf50;
+}
+
+.give-btn-outline:hover {
+    background: #4caf50;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .give-hero h1 {
+        font-size: 40px;
+    }
+
+    .give-hero p {
+        font-size: 18px;
+    }
+
+    .ways-give-heading h2,
+    .give-transparency h2,
+    .giving-form-text h2,
+    .give-cta h2 {
+        font-size: 30px;
+    }
+
+    .giving-form-card {
+        padding: 30px 25px;
+    }
+
+}

@@ -113,6 +113,13 @@
         </li>
 
         <li>
+            <a href="{% url 'give' %}"
+               class="{% if request.resolver_match.url_name == 'give' %}active{% endif %}">
+                Give
+            </a>
+        </li>
+
+        <li>
             <a href="{% url 'contact' %}"
                class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
                 Contact
@@ -146,6 +153,7 @@
             <p><a href="/church/">Church</a></p>
             <p><a href="/children/">Children</a></p>
             <p><a href="/get-involved/">Get Involved</a></p>
+            <p><a href="/give/">Give</a></p>
         </div>
 
         <div class="footer-section">

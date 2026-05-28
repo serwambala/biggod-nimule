@@ -10,6 +10,7 @@ urlpatterns = [
     path('core-values/', views.core_values, name='core-values'),
     path('vision/', views.vision, name='vision_&_mission'),
     path('story/', views.story, name='story'),
+    path('give/', views.give, name='give'),
     path('contact/', views.contact, name='contact'),
     path('gallery/', views.gallery, name='gallery'),
     path('statement-of-faith/', views.statement_of_faith, name='statement-of-faith'),
