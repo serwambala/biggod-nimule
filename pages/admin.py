@@ -102,6 +102,7 @@ from .models import Donation
 class DonationAdmin(admin.ModelAdmin):
     list_display = (
         'full_name',
+        'currency',
         'amount',
         'purpose',
         'network',
