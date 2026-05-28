@@ -157,6 +157,19 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
 
         </div>
 
+        {% if messages %}
+
+        <div class="form-success-message">
+
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+
         <div class="giving-form-card">
 
             <form method="POST">
@@ -201,7 +214,7 @@ style="background-image: url('{% static "images/give-hero.jpg" %}');">
                 </div>
 
                 <button type="submit" class="give-submit-btn">
-                    Continue Giving
+                    Submit
                 </button>
 
             </form>
