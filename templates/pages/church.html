@@ -1,346 +1,193 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-
-<!-- HERO SECTION -->
-<section class="church-hero">
-
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="{% static 'videos/choir.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <h1>Encounter God Through Worship</h1>
-
-        <p>
-            Join us as we worship, pray, grow in faith,
-            and extend the love of Christ to the community.
-        </p>
-
-        <a href="{{ latest_sermon.video_url }}" target="_blank" class="watch-sermon-btn">
-            Watch Latest Sermon
-        </a>
-    </div>
-
-</section>
-
-
-<!-- CHURCH INTRO -->
-<section class="church-intro">
-
-    <div class="container church-intro-content">
-
-        <!-- LEFT IMAGE -->
-        <div class="church-intro-image">
-            <img src="{% static 'images/pastor1.png' %}" alt="Church Pastor">
-        </div>
-
-        <!-- RIGHT TEXT -->
-        <div class="church-intro-text">
-
-            <div class="section-heading">
-                <h2>Welcome to Our Church Family</h2>
-            </div>
-
+    <!-- HERO SECTION -->
+    <section class="church-hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="{% static 'videos/choir.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Encounter God Through Worship</h1>
             <p>
-                Our church exists to glorify God, transform lives,
-                disciple believers, and bring hope to communities
-                through the love and teachings of Jesus Christ.
+                Join us as we worship, pray, grow in faith,
+                and extend the love of Christ to the community.
             </p>
-
-            <p>
-                We are passionate about worship, prayer, missions,
-                children ministry, discipleship, and compassionate outreach.
-            </p>
-
-            <h3>Pr. George William Ssekanjako</h3>
-            <small>Lead Pastor - Big God Church - Nimule</small>
-
+            <a href="{{ latest_sermon.video_url }}"
+               target="_blank"
+               class="watch-sermon-btn">Watch Latest Sermon</a>
         </div>
-
-    </div>
-
-</section>
-
-<!-- APPROVED TESTIMONIES -->
-<section class="approved-testimonies">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>Lives Transformed</h2>
-
-            <p>
-                Here are some testimonies shared
-                by members and visitors.
-            </p>
-
-        </div>
-
-
-        <div class="testimony-grid">
-
-            {% for testimony in testimonies %}
-
-            <div class="testimony-card">
-
-                <p class="testimony-message">
-                    “{{ testimony.message }}”
-                </p>
-
-                <h4>{{ testimony.name }}</h4>
-
+    </section>
+    <!-- CHURCH INTRO -->
+    <section class="church-intro">
+        <div class="container church-intro-content">
+            <!-- LEFT IMAGE -->
+            <div class="church-intro-image">
+                <img src="{% static 'images/pastor1.png' %}" alt="Church Pastor">
             </div>
-
-            {% empty %}
-
-            <p>No testimonies available yet.</p>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- TESTIMONY SUBMISSION -->
-<section class="testimony-form-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>Share Your Testimony</h2>
-
-            <p>
-                Tell us what God has done in your life.
-                Your testimony may encourage someone else.
-            </p>
-
-        </div>
-
-        <form method="POST" class="testimony-form">
-
-            {% csrf_token %}
-
-            <div class="form-group">
-
-                <label>Your Name</label>
-
-                <input type="text"
-                       name="name"
-                       required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>Your Testimony</label>
-
-                <textarea name="message"
-                          rows="6"
-                          required></textarea>
-
-            </div>
-
-
-            <button type="submit"
-                    class="submit-btn">
-
-                Submit Testimony
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-
-<!-- LATEST SERMON SECTION -->
-<section id="latest-sermon" class="latest-sermon-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <h2>Latest Sermon</h2>
-            <p>Be encouraged through the Word of God.</p>
-        </div>
-
-        {% if latest_sermon %}
-
-        <div class="sermon-wrapper">
-
-            <!-- VIDEO -->
-            <div class="sermon-video">
-
-                <a href="{{ latest_sermon.video_url }}" target="_blank" class="watch-sermon-btn">
-    Watch Latest Sermon
-</a>
-
-            </div>
-
-
-            <!-- DETAILS -->
-            <div class="sermon-details">
-
-                <h3>{{ latest_sermon.title }}</h3>
-
-                <p>
-                    {{ latest_sermon.description }}
-                </p>
-
-                <p class="sermon-date">
-                    Uploaded on {{ latest_sermon.created_at|date:'F d, Y' }}
-                </p>
-
-                <a href="{{ latest_sermon.video.url }}"
-                   target="_blank"
-                   class="watch-btn">
-
-                    Watch Latest Sermon
-
-                </a>
-
-            </div>
-
-        </div>
-
-        {% else %}
-
-        <div class="no-sermon-message">
-
-            <p>
-                No sermon has been uploaded yet.
-                Please check back later.
-            </p>
-
-        </div>
-
-        {% endif %}
-
-    </div>
-
-</section>
-
-
-
-<!-- SERVICE TIMES -->
-<section class="service-times">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <h2>Service Times</h2>
-            <p>You are warmly welcome to worship with us.</p>
-        </div>
-
-        <div class="service-grid">
-
-            <div class="service-card">
-                <h3>Sunday Worship Service</h3>
-                <p>9:00 AM – 1:00 PM</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Midweek Prayer Service</h3>
-                <p>Wednesday • 12:00 AM - 2:00PM</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Youth Fellowship</h3>
-                <p>Friday • Overnight Service 8:00 PM - 1:00 AM</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- UPCOMING EVENTS -->
-<section class="upcoming-events">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <h2>Upcoming Events</h2>
-            <p>
-                Stay updated with ministry activities
-                and gatherings.
-            </p>
-        </div>
-
-        <div class="events-grid">
-
-            {% for event in events %}
-
-            <div class="event-card">
-
-                <div class="event-date">
-                    <span>{{ event.date }}</span>
+            <!-- RIGHT TEXT -->
+            <div class="church-intro-text">
+                <div class="section-heading">
+                    <h2>Welcome to Our Church Family</h2>
                 </div>
-
-                <h3>{{ event.title }}</h3>
-
-                <p>{{ event.description }}</p>
-
-                <p class="event-location">
-                    <strong>Venue:</strong> {{ event.location }}
+                <p>
+                    Our church exists to glorify God, transform lives,
+                    disciple believers, and bring hope to communities
+                    through the love and teachings of Jesus Christ.
                 </p>
-
+                <p>
+                    We are passionate about worship, prayer, missions,
+                    children ministry, discipleship, and compassionate outreach.
+                </p>
+                <h3>Pr. George William Ssekanjako</h3>
+                <small>Lead Pastor - Big God Church - Nimule</small>
             </div>
-
-            {% empty %}
-
-            <p>No upcoming events at the moment.</p>
-
-            {% endfor %}
-
         </div>
-
-    </div>
-
-</section>
-
-
-
-
-
-
-
-
-<!-- CALL TO WORSHIP -->
-<section class="worship-call-section">
-
-    <div class="container">
-
-        <h2>Come Worship With Us</h2>
-
-        <p>
-            Whether you are seeking hope,
-            prayer, healing, community,
-            or a deeper relationship with God,
-            you are welcome here.
-        </p>
-
-        <a href="#" class="visit-btn">
-            Plan Your Visit
-        </a>
-
-    </div>
-
-</section>
-
+    </section>
+    <!-- APPROVED TESTIMONIES -->
+    <section class="approved-testimonies">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Lives Transformed</h2>
+                <p>
+                    Here are some testimonies shared
+                    by members and visitors.
+                </p>
+            </div>
+            <div class="testimony-grid">
+                {% for testimony in testimonies %}
+                    <div class="testimony-card">
+                        <p class="testimony-message">“{{ testimony.message }}”</p>
+                        <h4>{{ testimony.name }}</h4>
+                    </div>
+                {% empty %}
+                    <p>No testimonies available yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- TESTIMONY SUBMISSION -->
+    <section class="testimony-form-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Share Your Testimony</h2>
+                <p>
+                    Tell us what God has done in your life.
+                    Your testimony may encourage someone else.
+                </p>
+            </div>
+            <form method="POST" class="testimony-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Testimony</label>
+                    <textarea name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Testimony</button>
+            </form>
+        </div>
+    </section>
+    <!-- LATEST SERMON SECTION -->
+    <section id="latest-sermon" class="latest-sermon-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Latest Sermon</h2>
+                <p>Be encouraged through the Word of God.</p>
+            </div>
+            {% if latest_sermon %}
+                <div class="sermon-wrapper">
+                    <!-- VIDEO -->
+                    <div class="sermon-video">
+                        <a href="{{ latest_sermon.video_url }}"
+                           target="_blank"
+                           class="watch-sermon-btn">Watch Latest Sermon</a>
+                    </div>
+                    <!-- DETAILS -->
+                    <div class="sermon-details">
+                        <h3>{{ latest_sermon.title }}</h3>
+                        <p>{{ latest_sermon.description }}</p>
+                        <p class="sermon-date">Uploaded on {{ latest_sermon.created_at|date:'F d, Y' }}</p>
+                        <a href="{{ latest_sermon.video.url }}"
+                           target="_blank"
+                           class="watch-btn">Watch Latest Sermon</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="no-sermon-message">
+                    <p>
+                        No sermon has been uploaded yet.
+                        Please check back later.
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    <!-- SERVICE TIMES -->
+    <section class="service-times">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Service Times</h2>
+                <p>You are warmly welcome to worship with us.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Sunday Worship Service</h3>
+                    <p>9:00 AM – 1:00 PM</p>
+                </div>
+                <div class="service-card">
+                    <h3>Midweek Prayer Service</h3>
+                    <p>Wednesday • 12:00 AM - 2:00 PM</p>
+                </div>
+                <div class="service-card">
+                    <h3>Youth Fellowship</h3>
+                    <p>Friday • Overnight Service 8:00 PM - 1:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- UPCOMING EVENTS -->
+    <section class="upcoming-events">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Upcoming Events</h2>
+                <p>
+                    Stay updated with ministry activities
+                    and gatherings.
+                </p>
+            </div>
+            <div class="events-grid">
+                {% for event in events %}
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span>{{ event.date }}</span>
+                        </div>
+                        <h3>{{ event.title }}</h3>
+                        <p>{{ event.description }}</p>
+                        <p class="event-location">
+                            <strong>Venue:</strong> {{ event.location }}
+                        </p>
+                    </div>
+                {% empty %}
+                    <p>No upcoming events at the moment.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- CALL TO WORSHIP -->
+    <section class="worship-call-section">
+        <div class="container">
+            <h2>Come Worship With Us</h2>
+            <p>
+                Whether you are seeking hope,
+                prayer, healing, community,
+                or a deeper relationship with God,
+                you are welcome here.
+            </p>
+            <a href="#" class="visit-btn">Plan Your Visit</a>
+        </div>
+    </section>
 {% endblock %}

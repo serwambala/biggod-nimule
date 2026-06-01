@@ -1,46 +1,39 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block content %}
-
-<section class="gallery-section">
-
-    <h1>Ministry Gallery</h1>
-
-    <p>
-        Moments from our ministry work, worship services,
-        children outreach, and community activities in Nimule.
-    </p>
-
-   <div class="gallery-grid">
-
-    <img src="{% static 'images/children3.jpg' %}" alt="Gallery Image" onclick="openLightbox(this.src)">
-
-    <img src="{% static 'images/gallery2.jpg' %}" alt="Gallery Image" onclick="openLightbox(this.src)">
-
-    <img src="{% static 'images/gallery3.jpg' %}" alt="Gallery Image" onclick="openLightbox(this.src)">
-
-    <img src="{% static 'images/gallery4.jpg' %}" alt="Gallery Image" onclick="openLightbox(this.src)">
-
-    <img src="{% static 'images/gallery5.jpg' %}" alt="Gallery Image" onclick="openLightbox(this.src)">
-
-    <img src="{% static 'images/gallery6.jpg' %}" alt="Gallery Image" onclick="openLightbox(this.src)">
-
-</div>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-
-    <img id="lightbox-img" src="" alt="Expanded Image">
-
-</div>
-
-</section>
-
-<script>
+    <section class="gallery-section">
+        <h1>Ministry Gallery</h1>
+        <p>
+            Moments from our ministry work, worship services,
+            children outreach, and community activities in Nimule.
+        </p>
+        <div class="gallery-grid">
+            <img src="{% static 'images/children3.jpg' %}"
+                 alt="Gallery Image"
+                 onclick="openLightbox(this.src)">
+            <img src="{% static 'images/gallery2.jpg' %}"
+                 alt="Gallery Image"
+                 onclick="openLightbox(this.src)">
+            <img src="{% static 'images/gallery3.jpg' %}"
+                 alt="Gallery Image"
+                 onclick="openLightbox(this.src)">
+            <img src="{% static 'images/gallery4.jpg' %}"
+                 alt="Gallery Image"
+                 onclick="openLightbox(this.src)">
+            <img src="{% static 'images/gallery5.jpg' %}"
+                 alt="Gallery Image"
+                 onclick="openLightbox(this.src)">
+            <img src="{% static 'images/gallery6.jpg' %}"
+                 alt="Gallery Image"
+                 onclick="openLightbox(this.src)">
+        </div>
+        <!-- LIGHTBOX -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Expanded Image">
+        </div>
+    </section>
+    <script>
 
 function openLightbox(imageSrc) {
 
@@ -54,6 +47,5 @@ function closeLightbox() {
     document.getElementById("lightbox").classList.remove("active");
 }
 
-</script>
-
+    </script>
 {% endblock %}

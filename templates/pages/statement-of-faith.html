@@ -1,199 +1,139 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-
-<!-- HERO -->
-<section class="faith-hero"
-style="background-image: url('{% static "images/faith-hero.jpg" %}');">
-
-    <div class="faith-hero-overlay"></div>
-
-    <div class="faith-hero-content">
-
-        <h1>Statement of Faith</h1>
-
+    <!-- HERO -->
+    <section class="faith-hero"
+             style="background-image: url('{% static "images/faith-hero.jpg" %}')">
+        <div class="faith-hero-overlay"></div>
+        <div class="faith-hero-content">
+            <h1>Statement of Faith</h1>
+            <p>
+                What we believe, teach, and stand upon as a ministry
+                rooted in the Word of God.
+            </p>
+        </div>
+    </section>
+    <!-- INTRO -->
+    <section class="faith-intro">
+        <div class="faith-intro-container">
+            <h2>Our Foundation</h2>
+            <p>
+                Our beliefs are grounded in the Holy Scriptures, which we accept
+                as the inspired and authoritative Word of God. Everything we do
+                as a ministry flows from these truths.
+            </p>
+            <p>
+                This statement of faith guides our teaching, worship, leadership,
+                and outreach as we serve communities in Nimule and beyond.
+            </p>
+        </div>
+    </section>
+    <!-- BELIEFS GRID -->
+    <section class="faith-section">
+        <h2>What We Believe</h2>
+        <div class="faith-grid">
+            <div class="faith-card">
+                <h3>The Bible</h3>
+                <p>
+                    We believe the Bible is the inspired, infallible Word of God,
+                    and the final authority in all matters of faith and life.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>God (The Trinity)</h3>
+                <p>
+                    We believe in one God, eternally existing in three persons:
+                    Father, Son, and Holy Spirit.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>Jesus Christ</h3>
+                <p>
+                    We believe Jesus Christ is the Son of God, fully divine and fully human,
+                    who died for our sins and rose again.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>Salvation</h3>
+                <p>
+                    We believe salvation is a gift of grace through faith in Jesus Christ alone,
+                    not by works.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>The Holy Spirit</h3>
+                <p>
+                    We believe the Holy Spirit empowers believers to live godly lives,
+                    serve effectively, and grow spiritually.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>The Church</h3>
+                <p>
+                    We believe the Church is the body of Christ, called to worship God,
+                    disciple believers, and reach the world.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>Prayer</h3>
+                <p>
+                    We believe prayer is essential for communion with God,
+                    guidance, healing, and spiritual strength.
+                </p>
+            </div>
+            <div class="faith-card">
+                <h3>Eternal Life</h3>
+                <p>
+                    We believe in eternal life through Jesus Christ,
+                    with resurrection and judgment for all.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- SCRIPTURE -->
+    <section class="faith-scripture">
+        <div class="faith-scripture-box">
+            <h2>Our Anchor</h2>
+            <p class="faith-scripture-text">
+                “All Scripture is God-breathed and is useful for teaching,
+                rebuking, correcting and training in righteousness.”
+                — 2 Timothy 3:16
+            </p>
+        </div>
+    </section>
+    <!-- COMMITMENT -->
+    <section class="faith-commitment">
+        <div class="faith-commitment-container">
+            <div class="faith-commitment-text">
+                <h2>How This Shapes Our Ministry</h2>
+                <p>
+                    Our faith is not theoretical—it is lived out daily through worship,
+                    service, discipleship, and outreach.
+                </p>
+                <p>
+                    Every program, prayer gathering, and act of compassion is guided
+                    by these beliefs as we seek to glorify God and serve people faithfully.
+                </p>
+                <p>
+                    We remain committed to preaching the Gospel of Jesus Christ
+                    and demonstrating His love through action.
+                </p>
+            </div>
+            <div class="faith-commitment-image">
+                <img src="{% static 'images/faith-action.jpg' %}" alt="Faith in Action">
+            </div>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section class="faith-cta">
+        <h2>Stand With Us in Faith</h2>
         <p>
-            What we believe, teach, and stand upon as a ministry
-            rooted in the Word of God.
+            Join us as we grow in faith, serve communities, and proclaim
+            the Gospel of Jesus Christ in Nimule and beyond.
         </p>
-
-    </div>
-
-</section>
-
-<!-- INTRO -->
-<section class="faith-intro">
-
-    <div class="faith-intro-container">
-
-        <h2>Our Foundation</h2>
-
-        <p>
-            Our beliefs are grounded in the Holy Scriptures, which we accept
-            as the inspired and authoritative Word of God. Everything we do
-            as a ministry flows from these truths.
-        </p>
-
-        <p>
-            This statement of faith guides our teaching, worship, leadership,
-            and outreach as we serve communities in Nimule and beyond.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- BELIEFS GRID -->
-<section class="faith-section">
-
-    <h2>What We Believe</h2>
-
-    <div class="faith-grid">
-
-        <div class="faith-card">
-            <h3>The Bible</h3>
-            <p>
-                We believe the Bible is the inspired, infallible Word of God,
-                and the final authority in all matters of faith and life.
-            </p>
+        <div class="faith-cta-buttons">
+            <a href="/get-involved/" class="faith-btn">Get Involved</a>
+            <a href="/contact/" class="faith-btn faith-btn-outline">Contact Us</a>
         </div>
-
-        <div class="faith-card">
-            <h3>God (The Trinity)</h3>
-            <p>
-                We believe in one God, eternally existing in three persons:
-                Father, Son, and Holy Spirit.
-            </p>
-        </div>
-
-        <div class="faith-card">
-            <h3>Jesus Christ</h3>
-            <p>
-                We believe Jesus Christ is the Son of God, fully divine and fully human,
-                who died for our sins and rose again.
-            </p>
-        </div>
-
-        <div class="faith-card">
-            <h3>Salvation</h3>
-            <p>
-                We believe salvation is a gift of grace through faith in Jesus Christ alone,
-                not by works.
-            </p>
-        </div>
-
-        <div class="faith-card">
-            <h3>The Holy Spirit</h3>
-            <p>
-                We believe the Holy Spirit empowers believers to live godly lives,
-                serve effectively, and grow spiritually.
-            </p>
-        </div>
-
-        <div class="faith-card">
-            <h3>The Church</h3>
-            <p>
-                We believe the Church is the body of Christ, called to worship God,
-                disciple believers, and reach the world.
-            </p>
-        </div>
-
-        <div class="faith-card">
-            <h3>Prayer</h3>
-            <p>
-                We believe prayer is essential for communion with God,
-                guidance, healing, and spiritual strength.
-            </p>
-        </div>
-
-        <div class="faith-card">
-            <h3>Eternal Life</h3>
-            <p>
-                We believe in eternal life through Jesus Christ,
-                with resurrection and judgment for all.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- SCRIPTURE -->
-<section class="faith-scripture">
-
-    <div class="faith-scripture-box">
-
-        <h2>Our Anchor</h2>
-
-        <p class="faith-scripture-text">
-            “All Scripture is God-breathed and is useful for teaching,
-            rebuking, correcting and training in righteousness.”
-            — 2 Timothy 3:16
-        </p>
-
-    </div>
-
-</section>
-
-<!-- COMMITMENT -->
-<section class="faith-commitment">
-
-    <div class="faith-commitment-container">
-
-        <div class="faith-commitment-text">
-
-            <h2>How This Shapes Our Ministry</h2>
-
-            <p>
-                Our faith is not theoretical—it is lived out daily through worship,
-                service, discipleship, and outreach.
-            </p>
-
-            <p>
-                Every program, prayer gathering, and act of compassion is guided
-                by these beliefs as we seek to glorify God and serve people faithfully.
-            </p>
-
-            <p>
-                We remain committed to preaching the Gospel of Jesus Christ
-                and demonstrating His love through action.
-            </p>
-
-        </div>
-
-        <div class="faith-commitment-image">
-
-            <img src="{% static 'images/faith-action.jpg' %}" alt="Faith in Action">
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-<section class="faith-cta">
-
-    <h2>Stand With Us in Faith</h2>
-
-    <p>
-        Join us as we grow in faith, serve communities, and proclaim
-        the Gospel of Jesus Christ in Nimule and beyond.
-    </p>
-
-    <div class="faith-cta-buttons">
-
-        <a href="/get-involved/" class="faith-btn">
-            Get Involved
-        </a>
-
-        <a href="/contact/" class="faith-btn faith-btn-outline">
-            Contact Us
-        </a>
-
-    </div>
-
-</section>
-
+    </section>
 {% endblock %}

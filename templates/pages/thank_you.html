@@ -1,50 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-
-<section class="thank-you-section">
-
-    <div class="thank-you-card">
-
-        <h1>Thank You For Your Giving 🙏</h1>
-
-        <p>
-            Your generosity is making a difference in the Kingdom work.
-        </p>
-
-        <div class="donation-summary">
-
-            <h3>Donation Summary</h3>
-
-            <p><strong>Name:</strong> {{ donation.full_name }}</p>
-            <p><strong>Phone:</strong> {{ donation.phone_number }}</p>
-
-            {% if donation.email %}
-            <p><strong>Email:</strong> {{ donation.email }}</p>
-            {% endif %}
-
-            <p><strong>Amount:</strong> {{ donation.amount }}</p>
-            <p><strong>Purpose:</strong> {{ donation.get_purpose_display }}</p>
-            <p><strong>Network:</strong> {{ donation.get_network_display }}</p>
-            <p><strong>Reference:</strong> {{ donation.transaction_reference }}</p>
-
+    <section class="thank-you-section">
+        <div class="thank-you-card">
+            <h1>Thank You For Your Giving 🙏</h1>
+            <p>Your generosity is making a difference in the Kingdom work.</p>
+            <div class="donation-summary">
+                <h3>Donation Summary</h3>
+                <p>
+                    <strong>Name:</strong> {{ donation.full_name }}
+                </p>
+                <p>
+                    <strong>Phone:</strong> {{ donation.phone_number }}
+                </p>
+                {% if donation.email %}
+                    <p>
+                        <strong>Email:</strong> {{ donation.email }}
+                    </p>
+                {% endif %}
+                <p>
+                    <strong>Amount:</strong> {{ donation.amount }}
+                </p>
+                <p>
+                    <strong>Purpose:</strong> {{ donation.get_purpose_display }}
+                </p>
+                <p>
+                    <strong>Network:</strong> {{ donation.get_network_display }}
+                </p>
+                <p>
+                    <strong>Reference:</strong> {{ donation.transaction_reference }}
+                </p>
+            </div>
+            <div class="thank-you-actions">
+                <a href="/give/#giving-form" class="give-btn">Give Again</a>
+                <a href="/" class="give-btn give-btn-outline">Back Home</a>
+            </div>
         </div>
-
-        <div class="thank-you-actions">
-
-            <a href="/give/#giving-form" class="give-btn">
-                Give Again
-            </a>
-
-            <a href="/" class="give-btn give-btn-outline">
-                Back Home
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
+    </section>
 {% endblock %}

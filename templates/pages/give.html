@@ -1,409 +1,225 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-
-<!-- HERO -->
-<section class="give-hero"
-style="background-image: url('{% static "images/give-hero.jpg" %}');">
-
-    <div class="give-hero-overlay"></div>
-
-    <div class="give-hero-content">
-
-        <h1>Give With Purpose</h1>
-
-        <p>
-            Your generosity helps us share the Gospel,
-            support vulnerable children, strengthen families,
-            and bring hope to communities in Nimule and beyond.
-        </p>
-
-        <a href="#giving-form" class="give-hero-btn">
-            Support the Ministry
-        </a>
-
-    </div>
-
-</section>
-
-<!-- WAYS TO GIVE -->
-<section class="ways-give">
-
-    <div class="ways-give-heading">
-
-        <h2>Ways To Give</h2>
-
-        <p>
-            Every contribution helps us continue ministry outreach,
-            worship services, children’s programs, and community support.
-        </p>
-
-    </div>
-
-    <div class="ways-give-grid">
-
-        <!-- MTN -->
-        <div class="give-card">
-
-            <div class="give-icon">📱</div>
-
-            <h3>MTN Mobile Money</h3>
-
-            <p><strong>Name:</strong> Big God Ministries</p>
-            <p><strong>Number:</strong> +256 XXX XXX XXX</p>
-
-        </div>
-
-        <!-- Airtel -->
-        <div class="give-card">
-
-            <div class="give-icon">💳</div>
-
-            <h3>Airtel Money</h3>
-
-            <p><strong>Name:</strong> Big God Ministries</p>
-            <p><strong>Number:</strong> +256 XXX XXX XXX</p>
-
-        </div>
-
-        <!-- Bank -->
-        <div class="give-card">
-
-            <div class="give-icon">🏦</div>
-
-            <h3>Bank Transfer</h3>
-
-            <p><strong>Bank:</strong> Example Bank</p>
-            <p><strong>Account:</strong> Big God Ministries</p>
-            <p><strong>A/C No:</strong> XXXXXXXX</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- TRANSPARENCY -->
-<section class="give-transparency">
-
-    <h2>Faithful Stewardship</h2>
-
-    <div class="transparency-grid">
-
-        <div class="transparency-card">
-
-            <div class="transparency-icon">🤝</div>
-
-            <h3>Accountability</h3>
-
+    <!-- HERO -->
+    <section class="give-hero"
+             style="background-image: url('{% static "images/give-hero.jpg" %}')">
+        <div class="give-hero-overlay"></div>
+        <div class="give-hero-content">
+            <h1>Give With Purpose</h1>
             <p>
-                We are committed to responsible stewardship
-                and transparent use of every contribution.
+                Your generosity helps us share the Gospel,
+                support vulnerable children, strengthen families,
+                and bring hope to communities in Nimule and beyond.
             </p>
-
+            <a href="#giving-form" class="give-hero-btn">Support the Ministry</a>
         </div>
-
-        <div class="transparency-card">
-
-            <div class="transparency-icon">🌍</div>
-
-            <h3>Community Impact</h3>
-
+    </section>
+    <!-- WAYS TO GIVE -->
+    <section class="ways-give">
+        <div class="ways-give-heading">
+            <h2>Ways To Give</h2>
             <p>
-                Your support helps strengthen worship,
-                outreach programs, children’s ministry,
-                and vulnerable families.
+                Every contribution helps us continue ministry outreach,
+                worship services, children’s programs, and community support.
             </p>
-
         </div>
-
-        <div class="transparency-card">
-
-            <div class="transparency-icon">🙏</div>
-
-            <h3>Prayer & Partnership</h3>
-
-            <p>
-                We value every giver as a ministry partner
-                and continually pray for those supporting the mission.
-            </p>
-
+        <div class="ways-give-grid">
+            <!-- MTN -->
+            <div class="give-card">
+                <div class="give-icon">📱</div>
+                <h3>MTN Mobile Money</h3>
+                <p>
+                    <strong>Name:</strong> Big God Ministries
+                </p>
+                <p>
+                    <strong>Number:</strong> +256 XXX XXX XXX
+                </p>
+            </div>
+            <!-- Airtel -->
+            <div class="give-card">
+                <div class="give-icon">💳</div>
+                <h3>Airtel Money</h3>
+                <p>
+                    <strong>Name:</strong> Big God Ministries
+                </p>
+                <p>
+                    <strong>Number:</strong> +256 XXX XXX XXX
+                </p>
+            </div>
+            <!-- Bank -->
+            <div class="give-card">
+                <div class="give-icon">🏦</div>
+                <h3>Bank Transfer</h3>
+                <p>
+                    <strong>Bank:</strong> Example Bank
+                </p>
+                <p>
+                    <strong>Account:</strong> Big God Ministries
+                </p>
+                <p>
+                    <strong>A/C No:</strong> XXXXXXXX
+                </p>
+            </div>
         </div>
-
-    </div>
-
-</section>
-
-<!-- GIVING FORM -->
-<section class="giving-form-section" id="giving-form">
-
-    <div class="giving-form-container">
-
-        <div class="giving-form-text">
-
-            <h2>Partner With The Ministry</h2>
-
-            <p>
-                Fill in your details below.
-                This information may be used to contact you
-                regarding your contribution or ministry partnership.
-            </p>
-
-            <p>
-                Thank you for standing with us in faith,
-                compassion, and service.
-            </p>
-
+    </section>
+    <!-- TRANSPARENCY -->
+    <section class="give-transparency">
+        <h2>Faithful Stewardship</h2>
+        <div class="transparency-grid">
+            <div class="transparency-card">
+                <div class="transparency-icon">🤝</div>
+                <h3>Accountability</h3>
+                <p>
+                    We are committed to responsible stewardship
+                    and transparent use of every contribution.
+                </p>
+            </div>
+            <div class="transparency-card">
+                <div class="transparency-icon">🌍</div>
+                <h3>Community Impact</h3>
+                <p>
+                    Your support helps strengthen worship,
+                    outreach programs, children’s ministry,
+                    and vulnerable families.
+                </p>
+            </div>
+            <div class="transparency-card">
+                <div class="transparency-icon">🙏</div>
+                <h3>Prayer & Partnership</h3>
+                <p>
+                    We value every giver as a ministry partner
+                    and continually pray for those supporting the mission.
+                </p>
+            </div>
         </div>
-
-        {% if messages %}
-
-        <div class="form-success-message">
-
-            {% for message in messages %}
-                <p>{{ message }}</p>
-            {% endfor %}
-
-        </div>
-
-        {% endif %}
-
-        
-
-
-       <form method="POST" class="give-form">
-
-    {% csrf_token %}
-
-    <!-- FULL NAME -->
-    <div class="form-group">
-        <p class="give-note">
-
-            Please complete your Mobile Money transfer first,
-            then submit the transaction reference code below
-            for confirmation.
-
-        </p>    
-
-        {% if messages %}
-            {% for message in messages %}
+    </section>
+    <!-- GIVING FORM -->
+    <section class="giving-form-section" id="giving-form">
+        <div class="giving-form-container">
+            <div class="giving-form-text">
+                <h2>Partner With The Ministry</h2>
+                <p>
+                    Fill in your details below.
+                    This information may be used to contact you
+                    regarding your contribution or ministry partnership.
+                </p>
+                <p>
+                    Thank you for standing with us in faith,
+                    compassion, and service.
+                </p>
+            </div>
+            {% if messages %}
                 <div class="form-success-message">
-                    {{ message }}
+                    {% for message in messages %}<p>{{ message }}</p>{% endfor %}
                 </div>
-            {% endfor %}
-        {% endif %}
-        <label for="full_name">
-            Full Name
-        </label>
-
-        <input type="text"
-               id="full_name"
-               name="full_name"
-               minlength="2"
-               maxlength="30"
-               required
-               oninvalid="this.setCustomValidity('Name must not exceed 30 characters')"
-               oninput="this.setCustomValidity('')">
-
-    </div>
-
-    <!-- PHONE NUMBER -->
-    <div class="form-group">
-
-        <label for="phone_number">
-            Phone Number
-        </label>
-
-        <input  
-            type="tel"
-            id="phone_number"
-            required
-        >
-
-        <input
-            type="hidden"
-            name="phone_number"
-            id="full_phone"
-        >
-
-    </div>
-
-    <!-- EMAIL -->
-    <div class="form-group">
-
-        <label for="email">
-            Email Address (Optional)
-        </label>
-
-        <input type="email"
-               id="email"
-               name="email">
-
-    </div>
-
-    <!--CURRENCY TYPE-->
-    <div class="form-group">
-        <label for="currency">Currency</label>
-
-        <select name="currency" id="currency">
-            <option value="UGX" selected>UGX</option>
-            <option value="USD">USD</option>
-        </select>
-    </div>
-
-    <!-- AMOUNT -->
-    <div class="form-group">
-
-        <label for="amount">
-            Donation Amount
-        </label>
-
-        <input type="number"
-               id="amount"
-               name="amount"
-               min="1"
-               step="0.01"
-               required>
-
-    </div>
-
-    <!-- PURPOSE -->
-    <div class="form-group">
-
-        <label for="purpose">
-            Purpose Of Giving
-        </label>
-
-        <select id="purpose"
-                name="purpose"
-                required>
-
-            <option value="">
-                Select Purpose
-            </option>
-
-            <option value="Tithe">
-                Tithe
-            </option>
-
-            <option value="Offering">
-                Offering
-            </option>
-
-            <option value="Children Ministry">
-                Children Ministry
-            </option>
-
-            <option value="Outreach">
-                Outreach
-            </option>
-
-            <option value="General Support">
-                General Support
-            </option>
-
-        </select>
-
-    </div>
-
-    <!-- NETWORK -->
-    <div class="form-group">
-
-        <label for="network">
-            Payment Network
-        </label>
-
-        <select id="network"
-                name="network"
-                required>
-
-            <option value="">
-                Select Network
-            </option>
-
-            <option value="MTN Mobile Money">
-                MTN Mobile Money
-            </option>
-
-            <option value="Airtel Money">
-                Airtel Money
-            </option>
-
-        </select>
-
-    </div>
-
-    <!-- TRANSACTION REFERENCE -->
-    <div class="form-group">
-
-        <label for="transaction_reference">
-            Transaction Reference Code
-        </label>
-
-        <input type="text"
-               id="transaction_reference"
-               name="transaction_reference"
-               placeholder="Example: MOMO12345"
-               required>
-
-    </div>
-
-    <button type="submit" class="give-submit-btn">
-        Submit Donation
-    </button>
-
-</form>
-
-    </div>
-
-</section>
-
-<!-- SCRIPTURE -->
-<section class="give-scripture">
-
-    <div class="give-scripture-box">
-
-        <h2>Foundation Scripture</h2>
-
-        <p class="give-scripture-text">
-            “Each one must give as he has decided in his heart,
-            not reluctantly or under compulsion,
-            for God loves a cheerful giver.”
-            — 2 Corinthians 9:7
+            {% endif %}
+            <form method="POST" class="give-form">
+                {% csrf_token %}
+                <!-- FULL NAME -->
+                <div class="form-group">
+                    <p class="give-note">
+                        Please complete your Mobile Money transfer first,
+                        then submit the transaction reference code below
+                        for confirmation.
+                    </p>
+                    {% if messages %}
+                        {% for message in messages %}<div class="form-success-message">{{ message }}</div>{% endfor %}
+                    {% endif %}
+                    <label for="full_name">Full Name</label>
+                    <input type="text"
+                           id="full_name"
+                           name="full_name"
+                           minlength="2"
+                           maxlength="30"
+                           required
+                           oninvalid="this.setCustomValidity('Name must not exceed 30 characters')"
+                           oninput="this.setCustomValidity('')">
+                </div>
+                <!-- PHONE NUMBER -->
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" required>
+                    <input type="hidden" name="phone_number" id="full_phone">
+                </div>
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="email">Email Address (Optional)</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <!--CURRENCY TYPE-->
+                <div class="form-group">
+                    <label for="currency">Currency</label>
+                    <select name="currency" id="currency">
+                        <option value="UGX" selected>UGX</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+                <!-- AMOUNT -->
+                <div class="form-group">
+                    <label for="amount">Donation Amount</label>
+                    <input type="number" id="amount" name="amount" min="1" step="0.01" required>
+                </div>
+                <!-- PURPOSE -->
+                <div class="form-group">
+                    <label for="purpose">Purpose Of Giving</label>
+                    <select id="purpose" name="purpose" required>
+                        <option value="">Select Purpose</option>
+                        <option value="Tithe">Tithe</option>
+                        <option value="Offering">Offering</option>
+                        <option value="Children Ministry">Children Ministry</option>
+                        <option value="Outreach">Outreach</option>
+                        <option value="General Support">General Support</option>
+                    </select>
+                </div>
+                <!-- NETWORK -->
+                <div class="form-group">
+                    <label for="network">Payment Network</label>
+                    <select id="network" name="network" required>
+                        <option value="">Select Network</option>
+                        <option value="MTN Mobile Money">MTN Mobile Money</option>
+                        <option value="Airtel Money">Airtel Money</option>
+                    </select>
+                </div>
+                <!-- TRANSACTION REFERENCE -->
+                <div class="form-group">
+                    <label for="transaction_reference">Transaction Reference Code</label>
+                    <input type="text"
+                           id="transaction_reference"
+                           name="transaction_reference"
+                           placeholder="Example: MOMO12345"
+                           required>
+                </div>
+                <button type="submit" class="give-submit-btn">Submit Donation</button>
+            </form>
+        </div>
+    </section>
+    <!-- SCRIPTURE -->
+    <section class="give-scripture">
+        <div class="give-scripture-box">
+            <h2>Foundation Scripture</h2>
+            <p class="give-scripture-text">
+                “Each one must give as he has decided in his heart,
+                not reluctantly or under compulsion,
+                for God loves a cheerful giver.”
+                — 2 Corinthians 9:7
+            </p>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section class="give-cta">
+        <h2>Thank You For Supporting The Mission</h2>
+        <p>
+            Your generosity helps us continue sharing hope,
+            serving communities, and advancing ministry outreach.
         </p>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-<section class="give-cta">
-
-    <h2>Thank You For Supporting The Mission</h2>
-
-    <p>
-        Your generosity helps us continue sharing hope,
-        serving communities, and advancing ministry outreach.
-    </p>
-
-    <div class="give-cta-buttons">
-
-        <a href="/contact/" class="give-btn">
-            Contact Us
-        </a>
-
-        <a href="/get-involved/" class="give-btn give-btn-outline">
-            Get Involved
-        </a>
-
-    </div>
-
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
-
-<script>
+        <div class="give-cta-buttons">
+            <a href="/contact/" class="give-btn">Contact Us</a>
+            <a href="/get-involved/" class="give-btn give-btn-outline">Get Involved</a>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+    <script>
 
 const phoneInput =
     document.querySelector("#phone_number");
@@ -490,7 +306,5 @@ phoneInput.form.addEventListener("submit", function (e) {
 
 });
 
-</script>
-
-
+    </script>
 {% endblock %}
